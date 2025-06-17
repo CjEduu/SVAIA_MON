@@ -1,0 +1,3 @@
+url = "ws://localhost:4445/ws/agent"
+files = ["/home/cj/testFiles/", "/home/cj/testFiles2/", "DoesntExist"]
+token = "token1"
