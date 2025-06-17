@@ -19,8 +19,8 @@ start_web_gui(){
 }
 
 start_api() {
-   echo "Starting BACKEND_LEGACY on port 4447"
-   cd legacy-web-backend/
+   echo "Starting WEB-API on port 4447"
+   cd web-api/
    
    flask --app app.py run --port 4447 &
    API_PID=$! 
