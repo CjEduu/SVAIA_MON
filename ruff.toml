@@ -1,0 +1,12 @@
+line-length = 80
+indent-width = 4
+target-version = "py312"
+fixable = ["ALL"]
+
+[lint]
+extend-select = ["I"]
+
+[format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
