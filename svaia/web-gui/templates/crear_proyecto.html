@@ -1,0 +1,147 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-1" style="padding-top: 80px; padding-bottom: 120px;">
+    <div class="mx-auto" style="max-width: 600px;">  <!-- Limita ancho y centra -->
+        <h2 class="text-center mb-4">Nuevo Proyecto</h2>
+        <!--<form method="POST">-->
+        <form id="formCrearProyecto"  enctype='multipart/form-data'>
+            <div class="mb-3">
+                <label for="nombre" class="form-label"><h3>Nombre</h3></label>
+                <input type="text" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label"><h3>Descripción</h3></label>
+                <textarea id="descripcion" name="descripcion"class="form-control" rows="4" placeholder="Opcional..."></textarea>
+            </div>
+            <div>
+              <label for="nivelCVSS" class="form-label mt-4"><h3>Puntuación CVSS v3.1 máxima aceptable</h3></label>
+              <select  class="form-select" id="exampleSelect1" name="nivelCVSS" type="number">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+
+            <h3 class="my-3">
+              NIVELES MÁXIMOS DE IMPACTO SOBRE:
+            </h3>
+            <div>
+              <label for="nivelIntegridad" class="form-label mt-4">INTEGRIDAD</label>
+              <select class="form-select" id="exampleSelect1" name="nivelIntegridad">
+                <option>NONE</option>
+                <option>LOW</option>
+                <option>MEDIUM</option>
+                <option>HIGH</option>
+                <option>CRITICAL</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="nivelConfidencialidad" class="form-label mt-4">CONFIDENCIALIDAD</label>
+              <select class="form-select" id="exampleSelect1" name="nivelConfidencialidad">
+                <option>NONE</option>
+                <option>LOW</option>
+                <option>MEDIUM</option>
+                <option>HIGH</option>
+                <option>CRITICAL</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="nivelDisponibilidad" class="form-label mt-4">DISPONIBILIDAD</label>
+              <select class="form-select" id="exampleSelect1" name="nivelDisponibilidad">
+                <option>NONE</option>
+                <option>LOW</option>
+                <option>MEDIUM</option>
+                <option>HIGH</option>
+                <option>CRITICAL</option>
+              </select>
+            </div>
+            <div class="mb-3">
+                <label for="sbomFile" class="form-label mt-4"><h2>SBOM</h2></label>
+                <input class="form-control" type="file" id="formFile" name="sbomFile" required>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success">Crear</button>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+ function parseFile(file){
+  return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.onload = (evt) => {
+        try {
+          const json = JSON.parse(evt.target.result);
+          resolve(json);
+        } catch (e) {
+          reject(e);
+        }
+      };
+      fileReader.onerror = () => reject(fileReader.error);
+      fileReader.readAsText(file);
+    });
+  };
+  
+async function crearProyecto(event) {
+    event.preventDefault();  // Evita el envío tradicional del formulario
+    
+    const formData = new FormData(event.target);  // Recoge todos los datos del formulario
+    const sbomFile = formData.get('sbomFile');
+    const sbomText = await parseFile(sbomFile);
+
+    // Realizamos una solicitud POST al backend para crear el nuevo proyecto
+    fetch("http://127.0.0.1:4447/api/proyectos/crear", {
+      method: "POST",
+      credentials:'include',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        nombre: formData.get("nombre"),
+        descripcion: formData.get("descripcion"),
+        nivelCVSS: formData.get("nivelCVSS"),
+        nivelIntegridad: formData.get("nivelIntegridad"),
+        nivelConfidencialidad: formData.get("nivelConfidencialidad"),
+        nivelDisponibilidad: formData.get("nivelDisponibilidad"),
+        sbom: sbomText
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(errorData => {
+          throw new Error(errorData.error || "Error al crear el proyecto");
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Obtener el valor de "next" desde la URL actual
+      const params = new URLSearchParams(window.location.search);
+      const next = params.get("next") || "{{ url_for('proyectos') }}";
+      
+      // Redirigir al destino adecuado
+      window.location.href = next;
+    })
+    .catch(error => {
+      alert("Error: " + error.message);  // Muestra errores si ocurren
+    });
+  }
+
+  document.getElementById('formCrearProyecto').addEventListener('submit', crearProyecto);
+</script>
+
+{% endblock %}
+
+

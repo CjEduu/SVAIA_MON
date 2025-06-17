@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5" style="padding-top: 80px; padding-bottom: 120px;">
+  <div class="mx-auto" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Editar Proyecto</h2>
+
+    <form id="formEditar" onsubmit="editarProyecto(event)">
+      <input type="hidden" name="nombre_original" value="{{ proyecto.nombre }}">
+
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nuevo Nombre del Proyecto</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" value="{{ proyecto.nombre }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="owner" class="form-label">Nuevo Propietario</label>
+        <input type="text" id="owner" name="owner" class="form-control" value="{{ proyecto.owner }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea id="descripcion" name="descripcion"
+          class="form-control" rows="4" placeholder="Describe el proyecto...">{{ proyecto.descripcion }}</textarea>
+      </div>
+      
+      <!--TODO Poner los valores actuales ocmo los seleccionados en los formularios...-->
+      <div>
+          <label for="nivelCVSS" class="form-label mt-4"><h3>Puntuación CVSS v3.1 máxima aceptable</h3></label>
+          <select  class="form-select" id="exampleSelect1" name="nivelCVSS" type="number" selected="{{ sec_info.nivelCSS }}">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+
+        <h3 class="my-3">
+          NIVELES MÁXIMOS DE IMPACTO SOBRE:
+        </h3>
+        <div>
+          <label for="nivelIntegridad" class="form-label mt-4">INTEGRIDAD</label>
+          <select class="form-select" id="exampleSelect1" name="nivelIntegridad">
+            <option>NONE</option>
+            <option>LOW</option>
+            <option>MEDIUM</option>
+            <option>HIGH</option>
+            <option>CRITICAL</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="nivelConfidencialidad" class="form-label mt-4">CONFIDENCIALIDAD</label>
+          <select class="form-select" id="exampleSelect1" name="nivelConfidencialidad">
+            <option>NONE</option>
+            <option>LOW</option>
+            <option>MEDIUM</option>
+            <option>HIGH</option>
+            <option>CRITICAL</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="nivelDisponibilidad" class="form-label mt-4">DISPONIBILIDAD</label>
+          <select class="form-select" id="exampleSelect1" name="nivelDisponibilidad">
+            <option>NONE</option>
+            <option>LOW</option>
+            <option>MEDIUM</option>
+            <option>HIGH</option>
+            <option>CRITICAL</option>
+          </select>
+        </div>
+        <div class="mb-3">
+            <label for="sbomFile" class="form-label mt-4"><h2>SBOM</h2></label>
+            <input class="form-control" type="file" id="formFile" name="sbomFile" required>
+        </div>
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a href="{{ url_for('proyectos') }}" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  function editarProyecto(event) {
+    event.preventDefault();
+  
+    const formData = new FormData(event.target);
+    console.log(formData.get("nombre_original"));
+
+    // TODO 
+    // Como huele esto a vulnerabilidad LMAO un path traversal manual cambiando el atributo hidden
+    // TODO
+    // Mandar el SBOM distinto
+    // TODO NO HARDCODEAR API ENDPOINT
+    fetch(`http://127.0.0.1:4447/api/proyectos/editar/${formData.get("nombre_original")}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      credentials: 'include',
+      body: JSON.stringify({
+        nombre: formData.get("nombre"),
+        owner: formData.get("owner"),
+        descripcion: formData.get("descripcion"),
+        nivelCVSS: formData.get("nivelCVSS"),
+        nivelIntegridad: formData.get("nivelIntegridad")   ,
+        nivelConfidencialidad: formData.get("nivelConfidencialidad")    ,
+        nivelDisponibilidad : formData.get("nivelDisponibilidad")
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(errorData => {
+          throw new Error(errorData.error || "Error al editar el proyecto");
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      window.location.href = "{{ url_for('proyectos') }}";  // Redirige a la lista de proyectos
+    })
+    .catch(error => {
+      alert("Error: " + error.message);
+    });
+  }
+  
+</script>
+{% endblock %}

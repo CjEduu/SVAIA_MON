@@ -1,0 +1,10 @@
+{% extends "layout.html"%}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content%}
+    {% import '_macros.html' as macros %}
+    {{ macros.flashes() }}  
+    <div style="white-space: pre-wrap; font-family: monospace;">{{ cve.literal_formatted | safe }}</div>
+
+{% endblock %}

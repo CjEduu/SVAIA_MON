@@ -1,0 +1,127 @@
+{% extends "layout.html"%}
+{% block head %}
+  {{ super() }}
+  <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 2rem); /* Restamos el padding del footer */
+        padding: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow-y: auto;
+    }
+
+    .project-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .project-item {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Resto de estilos de proyectos se mantienen igual */
+    .project-header {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        overflow-x: auto;
+    }
+
+    .project-description {
+        margin-bottom: 1rem;
+        color: #495057;
+    }
+
+    .project-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .action-link {
+        color: var(--bs-success);
+        text-decoration: none;
+        transition: color 0.2s;
+        font-weight: 500;
+    }
+
+    .action-link:hover {
+        color: #13653f;
+        text-decoration: underline;
+    }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+
+{% import '_macros.html' as macros %}
+{{ macros.flashes() }}
+
+<div class="container">
+    <ul class="project-list">
+    {% for u in usuarios %}
+        <li class="project-item">
+            <div class="project-header">
+                <strong>Nombre:</strong> {{ u["nombre"] }}
+            </div>
+            <div class="project-header">
+                <strong>Apellidos:</strong> {{ u["apellidos"] }}
+            </div>
+            <div class="project-header">
+                <strong>Correo:</strong> {{ u["correo"] }}
+            </div>
+            <div class="project-header">
+                <strong>ID:</strong> {{ u["id"] }}
+            </div>
+            <div class="project-header">
+                <strong>Roles:</strong> {% for role in u["roles"] %} role {% endfor %}
+            </div>
+            <div class="project-header">
+                <strong>P.Hash:</strong> {{ u["hashed_password"] }} (HERE FOR DEBUGGING)
+            </div>
+            <div class="project-actions">
+
+                <button class="btn btn-danger btn-sm" onclick="eliminarUsuario('{{ u.nombre }}')">Eliminar</button>
+
+                <form method="GET" action="{{ url_for('editar_usuario',nombre_usuario=u["nombre"]) }}">
+                    <input type="hidden" name="nombre" value="{{ u["nombre"] }}">
+                    <button type="submit" class="btn btn-primary btn-sm">Editar</button>
+                </form>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<script>
+    function eliminarUsuario(nombre) {
+      if (!confirm(`¿Estás seguro de que quieres eliminar el usuario "${nombre}"?`)) return;
+    
+      fetch(`http://127.0.0.1:4444/api/usuarios/eliminar/${encodeURIComponent(nombre)}`, {
+        method: "DELETE"
+      })
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(errorData => {
+            throw new Error(errorData.error || "Error al eliminar el usuario");
+          });
+        }
+        return response.json();
+      })
+    .then(data => {
+      window.location.href = "{{ url_for('usuarios') }}";  // Redirige a la lista de proyectos
+    })
+      .catch(error => {
+        alert("Error: " + error.message);
+      });
+    }
+    </script>
+    
+
+{% endblock %}
