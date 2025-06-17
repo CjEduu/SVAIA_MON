@@ -50,7 +50,8 @@ def find_cves_for_sbom(sbom:CydxSBOM)->list[ParsedCVE]:
             )
         except Exception as e:
             print(f"Error querying NVD for {cpe_string}: {e}")
-        component_cve.extend(results)
+        else:
+            component_cve.extend(results)
 
     # We parse them
     parsed_cves:list[ParsedCVE] = []

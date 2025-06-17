@@ -64,7 +64,7 @@ def analyse_sbom(sbom: CydxSBOM)->dict:
         4:"CRITICAL"
     }
     
-    maxCVSS = max( [cve.cvss for cve in cves_list] )
+    maxCVSS = max( [cve.cvss for cve in cves_list],default=0 )
     maxIntegridad = int_to_level.get( max([ level_to_int.get(cve.integridad) for cve in cves_list], default=0))
     maxConfidencialidad = int_to_level.get( max([level_to_int.get(cve.confidencialidad) for cve in cves_list], default=0) )
     maxDisponibilidad = int_to_level.get( max( [level_to_int.get(cve.disponibilidad) for cve in cves_list], default=0) )
