@@ -39,3 +39,4 @@ class TestSecureLogManager(unittest.TestCase):
         self.gestor_mock.anadir_credencial("CLAVE MAESTRA","SERVICIO","USER","PASSWORDSECRETA")
         self.gestor_mock.obtener_password("CLAVE MAESTRA","SERVICIO","USER")
         self.assertTrue(self.secure_logger.verificar_cadena_hashes(self.log_file))
+

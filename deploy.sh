@@ -32,7 +32,7 @@ start_api() {
 
 start_metrics_handler(){
   echo "Starting metrics_handler service on port 4445."
-  cd metrics-handler/src
+  cd metrics_handler/src
 
   fastapi dev --port 4445 &
   MET_PID=$!

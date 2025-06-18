@@ -387,7 +387,7 @@ def crear_proyecto():
     )
 
     if not sbom_analysis_response.ok:
-        return jsonify(sbom_analysis.json()),400
+        return jsonify(sbom_analysis_response.json()),400
     
     analysis_data = sbom_analysis_response.json()
     print(analysis_data)

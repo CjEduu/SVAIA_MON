@@ -1,0 +1,150 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.2",
+  "serialNumber": "urn:uuid:3a4b5c6d-7e8f-4a1b-b2c3-d4e5f6a7b8c9",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-06-18T18:11:00.000Z",
+    "tools": [
+      {
+        "vendor": "xAI",
+        "name": "SBOM Generator",
+        "version": "1.0.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:npm/sample-app@1.0.0",
+      "name": "sample-app",
+      "version": "1.0.0",
+      "description": "A sample Node.js application with dependencies",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/sample-app@1.0.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://example.com/sample-app"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/example/sample-app.git"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/express@4.17.1",
+      "name": "express",
+      "version": "4.17.1",
+      "description": "Fast, unopinionated, minimalist web framework for Node.js",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "d6d9992f80b5a65b95a182897b54a2e3c0d5722a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/express@4.17.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://expressjs.com/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/expressjs/express/issues"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/expressjs/express.git"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/lodash@4.17.15",
+      "name": "lodash",
+      "version": "4.17.15",
+      "description": "A modern JavaScript utility library delivering modularity, performance & extras",
+      "cpe": "cpe:2.3:a:lodash:lodash:4.17.15:*:*:*:*:node.js:*:*",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "b785c8a2b7f6654f3b4996b7e3b0d639b46b3b8e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lodash@4.17.15",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/lodash/lodash/issues"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/lodash/lodash.git"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/body-parser@1.19.0",
+      "name": "body-parser",
+      "version": "1.19.0",
+      "description": "Node.js body parsing middleware",
+      "cpe": "cpe:2.3:a:expressjs:body-parser:1.19.0:*:*:*:*:node.js:*:*",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/body-parser@1.19.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/expressjs/body-parser#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/expressjs/body-parser/issues"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/expressjs/body-parser.git"
+        }
+      ]
+    }
+  ]
+}

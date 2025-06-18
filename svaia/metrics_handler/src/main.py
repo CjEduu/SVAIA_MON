@@ -1,5 +1,5 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from .utils import validate_data
+from metrics_handler.src.utils import validate_data
 from pathlib import Path
 from secure_log_manager.src.SecureLogManager import SecureLogManager,monitor_funciones
 from os import path
@@ -44,7 +44,7 @@ async def agent_endpoint(websocket: WebSocket):
         # Project <-> Token relationship is 1 to 1
         if not validate_token(token):
             await websocket.close(code=1008,reason="Invalid project token")  # Invalid token
-            return
+            return 
 
         #PubSub list 
         # TODO, everything that needs to identify a project and does it with a token, change it
@@ -64,6 +64,7 @@ async def agent_endpoint(websocket: WebSocket):
             if structured_data is None:
                 # Log that you where unable to parse the data
                 # Keep receiving and do not send it
+                # Maybe i can create a special msg that signals unparsable data was sent?
                 continue
             
             # Forward it to clients listening

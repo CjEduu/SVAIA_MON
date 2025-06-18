@@ -5,6 +5,9 @@
 {% block content%}
     {% import '_macros.html' as macros %}
     {{ macros.flashes() }}  
+  <!--Carefull with XSS here!-->
+  <div class="text-center">
     <div style="white-space: pre-wrap; font-family: monospace;">{{ cve.literal_formatted | safe }}</div>
-
+    <div class= "mb-2" style="white-space: pre-wrap; font-family: monospace;">URL: {{ cve.url }}</div>
+  </div>
 {% endblock %}
