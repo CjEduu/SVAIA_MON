@@ -1,7 +1,22 @@
-
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-
 from .utils import validate_data
+from pathlib import Path
+from secure_log_manager.src.SecureLogManager import SecureLogManager,monitor_funciones
+from os import path
+
+
+# Inicializar Log manager
+# TODO Make this customizable
+parent_path = Path(__file__).parent.parent
+absolute_log_path = Path( parent_path / "logs/metrics_handler.log").resolve()
+if not absolute_log_path.exists():
+    open(absolute_log_path,'x').close()
+
+log_manager = SecureLogManager(debug_mode=10)
+log_manager.configure_logging(absolute_log_path)
+log_manager.inicializar_log()
+log_function = monitor_funciones(log_manager)
+
 
 app = FastAPI()
 project_clients:dict[str,list[WebSocket]] = {}
@@ -14,6 +29,7 @@ def validate_token(token: str) -> bool:
     return token in valid_tokens_mock
 
 @app.websocket("/ws/agent")
+@log_function("info")
 async def agent_endpoint(websocket: WebSocket):
     """
         Espera una conexión WS en la que primero debe recibir un token con el que se autenticará la conexión
@@ -64,7 +80,9 @@ async def agent_endpoint(websocket: WebSocket):
         print(f"Agent disconnected from project {token}")
 
 
+
 @app.websocket("/ws/get_data")
+@log_function("info")
 async def client_endpoint(websocket:WebSocket):
     """
         Function to subscribe to an specific project data stream    

@@ -23,7 +23,10 @@ En caso contrario, primero debemos instalar mariadb114, hacer un sync y luego a√
   Tras instalar mariadb114:
   uv sync && uv add mariadb
 ```
-
+Probablemente tambien haga falta
+```
+  uv pip install -e .
+```
 
 # Ejecutar
 Tras ello podremos entrar al entorno virtual sin problemas y ejecutar todo con:

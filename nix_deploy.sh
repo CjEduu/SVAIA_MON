@@ -43,7 +43,7 @@ start_metrics_handler(){
 
 start_sbom_analyzer(){
   echo "Starting sbom analyzer on port 4446."
-  cd sbom-analyzer/src
+  cd sbom_analyzer/src
 
   fastapi dev --port 4446 &
   SBM_PID=$!

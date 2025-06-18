@@ -1,18 +1,18 @@
 from dataclasses import dataclass
 from functools import lru_cache
-from os import path
 from typing import Optional
+from pathlib import Path
 
 from fastapi import FastAPI
 
-from . import config
-from .CVES import ParsedCVE
-from .cycloneDX import CydxSBOM
-from .secure_log_manager.src.SecureLogManager import (
+from sbom_analyzer.src import config
+from sbom_analyzer.src.CVES import ParsedCVE
+from sbom_analyzer.src.cycloneDX import CydxSBOM
+from sbom_analyzer.src.utils_cve import find_cves_for_sbom
+from secure_log_manager.src.SecureLogManager import (
     SecureLogManager,
     monitor_funciones,
 )
-from .utils_cve import find_cves_for_sbom
 
 
 @dataclass
@@ -26,17 +26,22 @@ def get_config():
 
 
 # TODO Make this customizable
-log_path = path.join("logs","sbom_analyzer.log")
-if not path.exists(log_path):
-    open(log_path,'x').close()
-
+parent_path = Path(__file__).parent.parent
+absolute_log_path = Path( parent_path / "logs/sbom_analyzer.log").resolve()
+if not absolute_log_path.exists():
+    open(absolute_log_path,'x').close()
 
 log_manager = SecureLogManager(debug_mode=10)
-log_manager.configure_logging(log_path)
+log_manager.configure_logging(absolute_log_path)
 log_manager.inicializar_log()
 log_function = monitor_funciones(log_manager)
 
 app = FastAPI()
+
+@app.get("/ping")
+def ping():
+    return {"message":"pong"}
+
 
 @app.post('/analizar_sbom')
 def forward_sbom(sbom: CydxSBOM):

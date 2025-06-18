@@ -1,6 +1,7 @@
 import unittest
+import os 
 
-from secure_log_manager.SecureLogManager import (
+from secure_log_manager.src.SecureLogManager import (
     SecureLogManager,
     monitor_funciones,
 )
@@ -8,7 +9,10 @@ from secure_log_manager.SecureLogManager import (
 
 class TestSecureLogManager(unittest.TestCase):
     def setUp(self):
-        self.log_file = "./logs/log_test_secure_manager.log"
+        # Presuponemos que se ejecuta desde el root del proyecto
+        self.log_file = "./svaia/secure_log_manager/test/logs/log_test_secure_manager.log"
+        if not os.path.exists(self.log_file):
+             open(self.log_file,'w').close()
         self.secure_logger = SecureLogManager(debug_mode=0)
         self.secure_logger.configure_logging(log_file=self.log_file)
         monitor = monitor_funciones(self.secure_logger)
