@@ -41,7 +41,7 @@ para ello podemos usar 'killall flask/fastapi' o el método que consideremos má
 # Agente
 En la carpeta svaia/agents se encuentra el código fuente del agente básico que introduciríamos en nuestros pcs a
 monitorizar.
-Para simplificar la cosa, he incluido un binario que debería funcionar en máquinas x64_86 y evitar la compilación.
+Para simplificar la cosa, he incluido un binario que debería funcionar en máquinas x86_64 y evitar la compilación.
 Si aun así quisieramos compilar el agente, simplemente en la carpeta agents/
 
 ```
