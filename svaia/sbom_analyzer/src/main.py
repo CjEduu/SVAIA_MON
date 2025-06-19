@@ -1,10 +1,9 @@
 from dataclasses import dataclass
 from functools import lru_cache
-from typing import Optional
 from pathlib import Path
+from typing import Optional
 
 from fastapi import FastAPI
-
 from sbom_analyzer.src import config
 from sbom_analyzer.src.CVES import ParsedCVE
 from sbom_analyzer.src.cycloneDX import CydxSBOM

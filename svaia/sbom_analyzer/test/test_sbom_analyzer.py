@@ -1,4 +1,5 @@
-import unittest 
+import unittest
+
 from fastapi.testclient import TestClient
 from sbom_analyzer.src.main import app
 

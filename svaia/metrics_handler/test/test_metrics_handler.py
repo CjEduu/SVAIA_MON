@@ -1,7 +1,9 @@
+import json
 import unittest
+
 from fastapi.testclient import TestClient
 from metrics_handler.src.main import app
-import json
+
 
 class TestWebSocketEndpoints(unittest.TestCase):
     def setUp(self):

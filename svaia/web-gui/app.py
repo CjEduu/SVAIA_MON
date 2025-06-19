@@ -2,14 +2,22 @@
 import ansi2html
 import requests
 import toml
-from flask import Flask, app, flash, redirect, render_template, request, url_for
+from flask import (
+    Flask,
+    app,
+    flash,
+    make_response,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
 
 app = Flask(__name__, template_folder="templates")
 app.config.from_file("config.toml",load=toml.load)
 app.secret_key = app.config['SECRET_KEY']
 API = app.config['API_ENDPOINT']
 
-from flask import make_response
 
 # WARNING: I SHOULD HAVE A SECOND LOOK ON EVERYTHING BECAUSE I CHANGED THINGS TO DEVELOP
 

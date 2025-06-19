@@ -1,13 +1,12 @@
+from time import sleep
 from typing import Union
 
 from nvdlib import searchCVE
 from nvdlib.classes import CVE
-
 from sbom_analyzer.src.cve_parser import format_single_cve
 from sbom_analyzer.src.CVES import ParsedCVE
-from sbom_analyzer.src.cycloneDX import CydxComponentType,CydxSBOM
+from sbom_analyzer.src.cycloneDX import CydxComponentType, CydxSBOM
 
-from time import sleep
 
 def infer_cpe(component)->Union[str,None]:
     """Infer CPE components if cpe field is missing."""

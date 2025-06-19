@@ -1,5 +1,5 @@
+import os
 import unittest
-import os 
 
 from secure_log_manager.src.SecureLogManager import (
     SecureLogManager,

@@ -1,9 +1,11 @@
+from pathlib import Path
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from metrics_handler.src.utils import validate_data
-from pathlib import Path
-from secure_log_manager.src.SecureLogManager import SecureLogManager,monitor_funciones
-from os import path
-
+from secure_log_manager.src.SecureLogManager import (
+    SecureLogManager,
+    monitor_funciones,
+)
 
 # Inicializar Log manager
 # TODO Make this customizable
