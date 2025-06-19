@@ -1,29 +1,24 @@
 # SVAIA_MON
 Proyecto para Ingeniería del Software Seguro 
 
-
-
 # Para comenzar
 Clona el repositorio
 ```
   git clone https://github.com/CjEduu/SVAIA_MON.git
 ```
 
-
 # Dependencias
-En el caso de uso de consumidor, la mayoría las maneja uv, excepto mariadb114.
-
-Si estamos utilizando nix/nixos será suficiente con:
+Para utilizar uv nativo:
 ```
-  nix develop && uv sync
+  uv sync 
 ```
 
-En caso contrario, primero debemos instalar mariadb114, hacer un sync y luego añadir mariadb:
+Con pip:
 ```
-  Tras instalar mariadb114:
-  uv sync && uv add mariadb
+  uv pip install -r requirements.txt
 ```
-Probablemente tambien haga falta
+
+Por último, para permitir la gestión correcta de los imports
 ```
   uv pip install -e .
 ```
@@ -40,8 +35,8 @@ Para parar la ejecución de los procesos:
   ./deploy.sh stop
 ```
 
-
-Siento mucho que no haya conseguido una forma más ergonómica, al haber partes en flask y FastAPI no lo he conseguido.
+Importante, si por error ejecutamos 2 veces seguidas "start", deberemos parar los procesos a mano, ya que el archivo con los PID se borra automáticamente,
+para ello podemos usar 'killall flask/fastapi' o el método que consideremos más conveniente.
 
 # Agente
 En la carpeta svaia/agents se encuentra el código fuente del agente básico que introduciríamos en nuestros pcs a
@@ -51,4 +46,14 @@ Si aun así quisieramos compilar el agente, simplemente en la carpeta agents/
 
 ```
   cargo build --release 
+```
+
+Para ello necesitaremos, evidentemente, cargo. Además, es necesario cambiar los path a monitorizar en el archivo Settings.toml
+
+
+# Test
+Para ejecutar los test, desde la raíz del proyecto
+```
+pytest
+  
 ```
