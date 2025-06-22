@@ -94,7 +94,7 @@ def usuarios():
     print(type(usuarios), usuarios)
     return render_template("usuarios.html", usuarios=usuarios)
 
-@app.route("/usuarios/crear",methods = ["GET"])
+@app.route("/usuarios/crear", methods=["GET"])
 def crear_usuario():
     resp = requests.post(f"{API}/is_logged",cookies=request.cookies)
     if resp.status_code==200:
@@ -103,9 +103,7 @@ def crear_usuario():
         flash("Es necesario iniciar sesión")
         return redirect(url_for("index"))
 
-
-#template correcto
-@app.route("/usuarios/editar/<string:nombre_usuario>", methods=["POST", "GET"])
+@app.route("/usuarios/editar/<string:nombre_usuario>", methods=["GET"])
 def editar_usuario(nombre_usuario):
     resp = requests.get(f"{API}/usuario/{nombre_usuario.strip()}")
     if resp.status_code != 200:
@@ -113,6 +111,49 @@ def editar_usuario(nombre_usuario):
     usuario = resp.json()
     return render_template("editar_usuario.html",usuario=usuario)
 
+@app.route("/usuarios/crear", methods=["POST"])
+def crear_usuario_post():
+    form = request.form
+    payload = {
+        "nombre": form.get("nombre"),
+        "apellidos": form.get("apellidos"),
+        "correo": form.get("correo"),
+        "password": form.get("password"),
+        "roles": [form.get("rol")] if form.get("rol") else []
+    }
+    api_resp = requests.post(f"{API}/usuarios/crear", json=payload, cookies=request.cookies)
+    if api_resp.status_code == 200:
+        flash("Usuario creado exitosamente", "success")
+        return redirect(url_for("usuarios"))
+    else:
+        try:
+            error_msg = api_resp.json().get("error", "Error al crear el usuario")
+        except Exception:
+            error_msg = "Error al crear el usuario"
+        flash(error_msg, "danger")
+        return redirect(url_for("crear_usuario"))
+
+@app.route("/usuarios/editar/<string:nombre_usuario>", methods=["POST"])
+def editar_usuario_post(nombre_usuario):
+    form = request.form
+    payload = {
+        "nombre": form.get("nombre"),
+        "apellidos": form.get("apellidos"),
+        "correo": form.get("correo"),
+        "password": form.get("password"),
+        "roles": [form.get("rol")]
+    }
+    api_resp = requests.patch(f"{API}/usuarios/editar/{nombre_usuario}", json=payload, cookies=request.cookies)
+    if api_resp.status_code == 200:
+        flash("Usuario editado exitosamente", "success")
+        return redirect(url_for("usuarios"))
+    else:
+        try:
+            error_msg = api_resp.json().get("error", "Error al editar el usuario")
+        except Exception:
+            error_msg = "Error al editar el usuario"
+        flash(error_msg, "danger")
+        return redirect(url_for("editar_usuario", nombre_usuario=nombre_usuario))
 
 #template correcto
 @app.route("/proyectos")

@@ -111,7 +111,7 @@ guard.init_app(app,Users)
 cors.init_app(app)
        
 @app.route("/api/is_logged",methods=['POST'])
-#@auth_required
+@auth_required
 def is_logged():
     return jsonify({"ok":True}),200
     
@@ -147,7 +147,7 @@ def get_usuario(nombre_usuario):
 
 #template correcto
 @app.route("/api/usuarios",methods=['GET'])
-#@auth_required
+@auth_required
 def get_usuarios():
     with Session(engine) as session:
         query = select(Users)
@@ -159,7 +159,7 @@ def get_usuarios():
 
 #template correcto
 @app.route("/api/usuarios/crear",methods=["POST"])
-#@auth_required
+@auth_required
 def crear_usuario():
     data = request.json
     nombre = data.get('nombre').lower().strip()
@@ -175,6 +175,7 @@ def crear_usuario():
    
     with Session(engine) as session:
         roles_existentes = session.query(Roles).where(Roles.rol.in_(roles)).all()
+        print(roles_existentes)
         missing_roles = {rol.lower().strip() for rol in roles} - { rol.rol for rol in roles_existentes}
         if missing_roles:
             return jsonify({"error":f"Roles no encontrados: {missing_roles}"}),400
@@ -241,7 +242,7 @@ def get_proyecto(nombre_proyecto):
 
 #template correcto
 @app.route("/api/proyectos",methods=['GET'])
-#@auth_required
+@auth_required
 def get_proyectos():
     with Session(engine) as session:
         query = select(Proyectos)

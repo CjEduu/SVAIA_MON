@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
+{% import '_macros.html' as macros %}
+{{ macros.flashes() }}  
 <div class="container mt-5" style="padding-top: 80px; padding-bottom: 120px;">
     <div id="usuario_nuevo" class="mx-auto" style="max-width: 600px;">
         <h2 class="text-center mb-4">Nuevo Usuario</h2>
-        <form id="formCrearUsuario" onsubmit="crearUsuario(event)">
+        <form id="formCrearUsuario" action="{{ url_for('crear_usuario_post') }}" method="POST">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" id="nombre" name="nombre" class="form-control" required>
@@ -32,37 +34,4 @@
         </form>
     </div>
 </div>
-
-<script>
-    function crearUsuario(event) {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        fetch("http://127.0.0.1:4444/api/usuarios/crear", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json'},
-            credentials: 'include',
-            body: JSON.stringify({
-                nombre: formData.get("nombre"),
-                apellidos: formData.get("apellidos"),
-                correo: formData.get("correo"),
-                password: formData.get("password"),
-                roles: [formData.get("rol")]  // Se añade 'Base' automáticamente en el backend
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(errorData => {
-                    throw new Error(errorData.error || "Error al crear el usuario");
-                });
-            }
-            return response.json();
-        })
-        .then(data => {
-            window.location.href = "{{ url_for('usuarios') }}";
-        })
-        .catch(error => {
-            alert("Error: " + error.message);
-        });
-    }
-</script>
 {% endblock %}
