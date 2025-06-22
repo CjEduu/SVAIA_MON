@@ -55,6 +55,7 @@ flowchart TD
 - **test_unauthorized_after_valid**: Simula un cambio de token tras una conexión válida para comprobar el manejo de sesiones inválidas.
 
 ### Secure Log Manager
+# NOTA: estos tests ejecutados uno a uno pasan, pero ejecutados en la general no. No sabemos bien por que pero creemos que es un tema de concurrencia.
 - **test_verificar_cadena_real**: Verifica la integridad de la cadena de logs tras operaciones simuladas.
 - **test_log_tampering_detection**: Modifica el archivo de log tras operaciones legítimas y verifica que el sistema detecta la manipulación.
 - **test_invalid_log_level**: Intenta registrar con un nivel de log inválido y espera una excepción o manejo seguro.
