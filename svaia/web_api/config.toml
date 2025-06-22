@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 SQLALCHEMY_TRACK_MODIFICATIONS = false
 SECRET_KEY = "nAhaMNBaiJcz6H8eWR1oz1xNfFbXMReX"
 JWT_ACCESS_LIFESPAN = {hours = 24}
 JWT_REFRESH_LIFESPAN = {days = 30}
 SBOM_API_ENDPOINT = "http://localhost:4446/analizar_sbom"
 DB_URI = "una_db_real"
+=======
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+SECRET_KEY = "nAhaMNBaiJcz6H8eWR1oz1xNfFbXMReX"
+JWT_ACCESS_LIFESPAN = {hours = 24}
+JWT_REFRESH_LIFESPAN = {days = 30}
+SBOM_API_ENDPOINT = "http://localhost:4446/analizar_sbom"
+DB_URI = "una_db_real"
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2

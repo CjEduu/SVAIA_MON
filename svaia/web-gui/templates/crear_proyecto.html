@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
 {% extends "layout.html" %}
 
 {% block content %}
@@ -70,6 +74,7 @@
                 <input class="form-control" type="file" id="formFile" name="sbomFile" required>
             </div>
             <div class="d-flex gap-2">
+<<<<<<< HEAD
                 <button id="crearBtn" type="submit" class="btn btn-success">
                   <span id="crearBtnText">Crear</span>
                   <span id="crearBtnSpinner" style="display:none;">
@@ -77,6 +82,9 @@
                     Cargando...
                   </span>
                 </button>
+=======
+                <button type="submit" class="btn btn-success">Crear</button>
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
                 <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
@@ -103,11 +111,15 @@
   
 async function crearProyecto(event) {
     event.preventDefault();  // Evita el envío tradicional del formulario
+<<<<<<< HEAD
     // Show spinner, hide text
     document.getElementById('crearBtnText').style.display = 'none';
     document.getElementById('crearBtnSpinner').style.display = 'inline-block';
     document.getElementById('crearBtn').disabled = true;
 
+=======
+    
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
     const formData = new FormData(event.target);  // Recoge todos los datos del formulario
     const sbomFile = formData.get('sbomFile');
     const sbomText = await parseFile(sbomFile);
@@ -145,12 +157,15 @@ async function crearProyecto(event) {
     })
     .catch(error => {
       alert("Error: " + error.message);  // Muestra errores si ocurren
+<<<<<<< HEAD
     })
     .finally(() => {
       // Restore button if needed (optional, since usually we redirect)
       document.getElementById('crearBtnText').style.display = 'inline';
       document.getElementById('crearBtnSpinner').style.display = 'none';
       document.getElementById('crearBtn').disabled = false;
+=======
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
     });
   }
 

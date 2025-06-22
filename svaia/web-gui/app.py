@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
 import ansi2html
 import requests
 import toml
@@ -10,7 +14,10 @@ from flask import (
     render_template,
     request,
     url_for,
+<<<<<<< HEAD
     g
+=======
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
 )
 
 app = Flask(__name__, template_folder="templates")
@@ -188,6 +195,7 @@ def ver_cve(cve_id):
     cve["literal_formatted"] = converter.convert(cve["literal_formatted"],full=False)
     return render_template("cve.html", cve=cve)
 
+<<<<<<< HEAD
 # Add a before_request to check login status and store user info in g
 @app.before_request
 def load_logged_in_user():
@@ -205,4 +213,6 @@ def load_logged_in_user():
 def inject_user():
     return dict(current_user=g.get('user', None))
 
+=======
+>>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
 
