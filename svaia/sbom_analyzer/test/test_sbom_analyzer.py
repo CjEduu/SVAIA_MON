@@ -142,7 +142,6 @@ class TestSbomAnalyzer(unittest.TestCase):
         self.assertEqual(response.status_code,200)
         self.assertEqual(response.json()["CVES"][0]["id"], "CVE-2024-45590")
 
-<<<<<<< HEAD
     def test_unsupported_sbom_format(self):
         response = self.client.post("/analizar_sbom", json={"bomFormat": "SPDX", "specVersion": "3.0.1"})
         self.assertIn(response.status_code, (400, 422))
@@ -167,7 +166,5 @@ class TestSbomAnalyzer(unittest.TestCase):
             response = self.client.post("/analizar_sbom", json={"bomFormat": "CycloneDX"})
             self.assertIn(response.status_code, (200, 400, 422))
 
-=======
->>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
 if __name__ == "__main__":
     unittest.main()

@@ -61,7 +61,6 @@ class TestWebSocketEndpoints(unittest.TestCase):
         agent.__exit__(None, None, None)
         client.__exit__(None, None, None)
 
-<<<<<<< HEAD
     def test_agent_flooding(self):
         """Test that flooding the agent endpoint with many messages does not crash or disconnect."""
         with self.client.websocket_connect("/ws/agent") as websocket:
@@ -85,8 +84,6 @@ class TestWebSocketEndpoints(unittest.TestCase):
             # websocket.send_text(self.invalid_token)
             # Should handle gracefully (no crash)
 
-=======
->>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
 if __name__ == "__main__":
     unittest.main()
 

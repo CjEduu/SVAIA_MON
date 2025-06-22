@@ -40,12 +40,11 @@ def construct_cpe(sbom_component)->Union[str,None]:
 
 def find_cves_for_sbom(sbom:CydxSBOM)->list[ParsedCVE]:
     component_cve:list[CVE] = list()
-<<<<<<< HEAD
+
     # Un SBOM válido puede NO tener componentes, cosa rara pero posible
     if sbom.components is None:
         return []
-=======
->>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
+
     for component in sbom.components:
         cpe_string = component.cpe if component.cpe else construct_cpe(component)
         try:
@@ -66,12 +65,6 @@ def find_cves_for_sbom(sbom:CydxSBOM)->list[ParsedCVE]:
             print(f"Error querying NVD for {cpe_string}: {e}")
         else:
             component_cve.extend(results)
-
-<<<<<<< HEAD
-=======
-        sleep(8) # Time between querys?
->>>>>>> ddb9f5b88c0198c24a781439214a720dd9b7b5c2
-        
 
     # We parse them
     parsed_cves:list[ParsedCVE] = []
