@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5" style="padding-top: 80px; padding-bottom: 120px;">
+    <div id="usuario_nuevo" class="mx-auto" style="max-width: 600px;">
+        <h2 class="text-center mb-4">Nuevo Usuario</h2>
+        <form id="formCrearUsuario" onsubmit="crearUsuario(event)">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="rol" class="form-label">Rol</label>
+                <input type="text" id="rol" name="rol" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success">Crear</button>
+                <a href="{{ url_for('usuarios') }}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function crearUsuario(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        fetch("http://127.0.0.1:4444/api/usuarios/crear", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
+                nombre: formData.get("nombre"),
+                apellidos: formData.get("apellidos"),
+                correo: formData.get("correo"),
+                password: formData.get("password"),
+                roles: [formData.get("rol")]  // Se añade 'Base' automáticamente en el backend
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errorData => {
+                    throw new Error(errorData.error || "Error al crear el usuario");
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            window.location.href = "{{ url_for('usuarios') }}";
+        })
+        .catch(error => {
+            alert("Error: " + error.message);
+        });
+    }
+</script>
+{% endblock %}

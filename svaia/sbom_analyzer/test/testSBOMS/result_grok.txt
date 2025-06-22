@@ -1,0 +1,3156 @@
+CycloneDX
+timestamp='2025-05-27T19:13:00Z'
+urn:uuid:4f671687-395b-41f5-a30f-a58921a69c80
+COMPONENTS--------------------------------
+type: CydxComponentType.library
+name: log4j
+version: 2.16.0
+description: None
+group: apache
+publisher: None
+CPE: cpe:2.3:a:apache:log4j:2.16.0:*:*:*:*:*:*:*
+--------------------------------------
+CPE STRING: cpe:2.3:a:apache:log4j:2.16.0:*:*:*:*:*:*:*
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-45105[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2021-12-18T12:15:07.433
+[1;34mÚltima modificación:[0m 2024-11-21T06:31:58.170
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Log4j2 versiones 2.0-alpha1 hasta 2.16.0 (excluyendo las versiones 2.12.3
+y 2.3.1) no protegían de la recursión no controlada de las búsquedas
+autorreferenciales. Esto permite a un atacante con control sobre los datos de
+Thread Context Map causar una denegación de servicio cuando es interpretada una
+cadena diseñada. Este problema se ha corregido en Log4j versiones 2.17.0, 2.12.3
+y 2.3.1
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.9 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.1)
+  - cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:* (Versiones anteriores a 2.12.3)
+  - cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2021/12/19/1 (Mailing List, Mitigation, Third Party Advisory)
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf (Third Party Advisory)
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-501673.pdf (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-44832[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2021-12-28T20:15:08.400
+[1;34mÚltima modificación:[0m 2024-11-21T06:31:34.783
+
+[1;33mDESCRIPCIÓN:[0m
+Las versiones de Apache Log4j2 de la 2.0-beta7 a la 2.17.0 (excluyendo las
+versiones de corrección de seguridad 2.3.2 y 2.12.4) son vulnerables a un ataque
+de ejecución remota de código (RCE) cuando una configuración utiliza un JDBC
+Appender con un URI de origen de datos JNDI LDAP cuando un atacante tiene el
+control del servidor LDAP de destino. Este problema se soluciona limitando los
+nombres de fuentes de datos JNDI al protocolo java en las versiones 2.17.1,
+2.12.4 y 2.3.2 de Log4j2
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 6.6 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.2)
+  - cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:* (Versiones anteriores a 2.12.4)
+  - cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:* (Versiones anteriores a 2.17.1)
+  - cpe:2.3:a:apache:log4j:2.0:-:*:*:*:*:*:*
+  - cpe:2.3:a:apache:log4j:2.0:beta7:*:*:*:*:*:*
+  - cpe:2.3:a:apache:log4j:2.0:beta8:*:*:*:*:*:*
+  - cpe:2.3:a:apache:log4j:2.0:beta9:*:*:*:*:*:*
+  - cpe:2.3:a:apache:log4j:2.0:rc1:*:*:*:*:*:*
+  - cpe:2.3:a:apache:log4j:2.0:rc2:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2021/12/28/1 (Mailing List, Third Party Advisory)
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf (Third Party Advisory)
+  - https://issues.apache.org/jira/browse/LOG4J2-3293 (Issue Tracking, Patch, Vendor Advisory)
+================================================================================
+
+type: CydxComponentType.library
+name: openssl
+version: 1.0.2u
+description: None
+group: openssl
+publisher: None
+CPE: cpe:2.3:a:openssl:openssl:1.0.2u:*:*:*:*:*:*:*
+--------------------------------------
+CPE STRING: cpe:2.3:a:openssl:openssl:1.0.2u:*:*:*:*:*:*:*
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2009-1390[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2009-06-16T21:00:00.343
+[1;34mÚltima modificación:[0m 2025-04-09T00:30:58.490
+
+[1;33mDESCRIPCIÓN:[0m
+Mutt v1.5.º9, enlazado contra (1) OpenSSL (mutt_ssl.c) o (2) GnuTLS
+(mutt_ssl_gnutls.c), permite conexiones cuando se acepta un certificado TLS en
+la cadena en vez de verificar esta última, lo que permite a atacantes remotos
+suplantar servidores de confianda a través de un ataque hombre-en-medio(Man-in-
+the-middle).
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:mutt:mutt:1.5.19:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://dev.mutt.org/hg/mutt/rev/64bf199c8d8a (Exploit, Patch)
+  - http://dev.mutt.org/hg/mutt/rev/8f11dd00c770 (Exploit)
+  - http://www.openwall.com/lists/oss-security/2009/06/10/2 (Patch)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2009-3765[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2009-10-23T19:30:00.203
+[1;34mÚltima modificación:[0m 2025-04-09T00:30:58.490
+
+[1;33mDESCRIPCIÓN:[0m
+mutt_ssl.c en mutt 1.5.19 y 1.5.20, cuando usa OenSSL, no maneja de forma
+adecuada el caracter  '\0' en un nombre de dominio, dentro del campo sujeto del
+Common Name (CN) en los certificados X.509, lo que permite a atacantes man-in-
+the-middle, espíar servidores SSL de su elección a través de certificados
+manipulados concedidos por Autoridades Certificadoras, esta relacionado con
+CVE-2009-2408.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:mutt:mutt:1.5.19:*:*:*:*:*:*:*
+  - cpe:2.3:a:mutt:mutt:1.5.20:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://dev.mutt.org/trac/changeset/6016:dc09812e63a3/mutt_ssl.c ()
+  - http://lists.opensuse.org/opensuse-security-announce/2009-10/msg00001.html ()
+  - http://marc.info/?l=oss-security&m=125198917018936&w=2 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2009-3766[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2009-10-23T19:30:00.233
+[1;34mÚltima modificación:[0m 2025-04-09T00:30:58.490
+
+[1;33mDESCRIPCIÓN:[0m
+En el archivo mutt_ssl.c en mutt versión 1.5.16 y otras versiones anteriores a
+1.5.19, cuando es usado OpenSSL, no comprueba el nombre de dominio en el campo
+Common Name (CN) de un certificado X.509, que permite a los atacantes de tipo
+man-in-the-middle falsificar servidores SSL por medio de un certificado válido
+arbitrario.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:mutt:mutt:*:*:*:*:*:*:*:* (Versiones anteriores a 1.5.19)
+
+[1;33mREFERENCIAS:[0m
+  - http://dev.mutt.org/trac/ticket/3087 (Patch, Vendor Advisory)
+  - http://marc.info/?l=oss-security&m=125198917018936&w=2 (Mailing List, Third Party Advisory)
+  - http://www.openwall.com/lists/oss-security/2009/10/26/1 (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2009-3767[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2009-10-23T19:30:00.250
+[1;34mÚltima modificación:[0m 2025-04-09T00:30:58.490
+
+[1;33mDESCRIPCIÓN:[0m
+libraries/libldap/tls_o.c en OpenLDAP, cuando se usa OpenSSL, no maneja de forma
+adecuada el caracter  '\0' en un nombre de dominio, dentro del campo sujeto del
+Common Name (CN) en los certificados X.509, lo  que permite a atacantes man-in-
+the-middle, espíar servidores SSL de su elección a través de certificados
+manipulados concedidos por Autoridades Certificadoras, esta relacionado con
+CVE-2009-2408.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openldap:openldap:*:*:*:*:*:*:*:* (Versiones anteriores a 2.4.18)
+
+[1;33mREFERENCIAS:[0m
+  - http://lists.apple.com/archives/security-announce/2009/Nov/msg00000.html (Mailing List, Third Party Advisory)
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/036138.html (Third Party Advisory)
+  - http://lists.opensuse.org/opensuse-security-announce/2009-10/msg00001.html (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2020-1968[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2020-09-09T14:15:12.507
+[1;34mÚltima modificación:[0m 2024-11-21T05:11:45.367
+
+[1;33mDESCRIPCIÓN:[0m
+El ataque Raccoon explota un fallo en la especificación TLS que puede conllevar
+a que un atacante sea capaz de calcular el secreto pre-master en conexiones que
+han usado un conjunto de cifrado basado en Diffie-Hellman (DH).&#xa0;En tal
+caso, esto haría que el atacante pudiera espiar todas las comunicaciones
+cifradas enviadas por medio de esa conexión TLS.&#xa0;El ataque solo puede ser
+explotado si una implementación reutiliza un secreto de DH en varias conexiones
+TLS.&#xa0;Tome en cuenta que este problema solo afecta a los conjuntos de
+cifrado DH y no a los conjuntos de cifrado ECDH.&#xa0;Este problema afecta a
+OpenSSL versión 1.0.2, que no es compatible y ya no recibe actualizaciones
+públicas.&#xa0;OpenSSL versión 1.1.1 no es vulnerable a este
+problema.&#xa0;Corregido en OpenSSL versión 1.0.2w (Afectadas versiones
+1.0.2-1.0.2v).
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 3.7 (LOW)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N
+  [1;36mImpacto:[0m Confidencialidad: LOW, Integridad: NONE, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - https://lists.debian.org/debian-lts-announce/2020/09/msg00016.html (Mailing List, Third Party Advisory)
+  - https://security.gentoo.org/glsa/202210-02 (Third Party Advisory)
+  - https://security.netapp.com/advisory/ntap-20200911-0004/ (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2020-1971[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2020-12-08T16:15:11.730
+[1;34mÚltima modificación:[0m 2024-11-21T05:11:45.673
+
+[1;33mDESCRIPCIÓN:[0m
+El tipo GeneralName X.509 es un tipo genérico para representar diferentes tipos
+de nombres.&#xa0;Uno de esos tipos de nombres se conoce como
+EDIPartyName.&#xa0;OpenSSL proporciona una función GENERAL_NAME_cmp que compara
+diferentes instancias de GENERAL_NAME para ver si son iguales o no.&#xa0;Esta
+función se comporta incorrectamente cuando ambos GENERAL_NAME contienen un
+EDIPARTYNAME.&#xa0;Es posible que se produzca una desreferencia del puntero NULL
+y un bloqueo que conduzca a un posible ataque de denegación de servicio.&#xa0;El
+propio OpenSSL usa la función GENERAL_NAME_cmp para dos propósitos:&#xa0;1)
+Comparación de nombres de puntos de distribución de CRL entre una CRL disponible
+y un punto de distribución de CRL insertado en un certificado X509 2) Al
+comparar que un firmante de token de respuesta de marca de tiempo coincide con
+el nombre de autoridad de marca de tiempo (expuesto por medio de las funciones
+API TS_RESP_verify_response y TS_RESP_verify_token) Si un atacante puede
+controlar ambos elementos que se están comparando, entonces ese atacante podría
+desencadenar un bloqueo.&#xa0;Por ejemplo, si el atacante puede engañar a un
+cliente o servidor para que compruebe un certificado malicioso con una CRL
+maliciosa, esto puede ocurrir.&#xa0;Tome en cuenta que algunas aplicaciones
+descargan automáticamente las CRL basadas en una URL insertada en un
+certificado.&#xa0;Esta comprobación ocurre antes de que se verifiquen las firmas
+en el certificado y la CRL.&#xa0;Las herramientas s_server, s_client y verify de
+OpenSSL tienen soporte para la opción "-crl_download"&#xa0;que implementa la
+descarga automática de CRL y se ha demostrado que este ataque funciona contra
+esas herramientas.&#xa0;Tome en cuenta que un error no relacionado significa que
+las versiones afectadas de OpenSSL no pueden analizar ni construir
+codificaciones correctas de EDIPARTYNAME.&#xa0;Sin embargo, es posible construir
+un EDIPARTYNAME malformado que el analizador de OpenSSL aceptará y, por lo
+tanto, desencadenará este ataque.&#xa0;Todas las versiones de OpenSSL 1.1.1 y
+1.0.2 están afectadas por este problema.&#xa0;Otras versiones de OpenSSL no son
+compatibles y no se han comprobado.&#xa0;Corregido en OpenSSL versiones 1.1.1i
+(Afectado versiones 1.1.1-1.1.1h).&#xa0;Corregido en OpenSSL versiones 1.0.2x
+(Afectado versiones 1.0.2-1.0.2w).&#xa0;Sin embargo, es posible construir un
+EDIPARTYNAME malformado que el analizador de OpenSSL aceptará y, por lo tanto,
+desencadenará este ataque.&#xa0;Todas las versiones de OpenSSL 1.1.1 y 1.0.2
+están afectadas por este problema.&#xa0;Otras versiones de OpenSSL no son
+compatibles y no se han comprobado.&#xa0;Corregido en OpenSSL versión 1.1.1i
+(Afectada versión 1.1.1-1.1.1h).&#xa0;Corregido en OpenSSL versión 1.0.2x
+(Afectada versión 1.0.2-1.0.2w).&#xa0;Sin embargo, es posible construir un
+EDIPARTYNAME malformado que el analizador de OpenSSL aceptará y, por lo tanto,
+desencadenará este ataque.&#xa0;Todas las versiones de OpenSSL 1.1.1 y 1.0.2
+están afectadas por este problema.&#xa0;Otras versiones de OpenSSL no son
+compatibles y no se han comprobado.&#xa0;Corregido en OpenSSL versión 1.1.1i
+(Afectada versión 1.1.1-1.1.1h).&#xa0;Corregido en OpenSSL versión 1.0.2x
+(Afectada versión 1.0.2-1.0.2w)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.9 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2x)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1i)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2021/09/14/2 (Mailing List, Third Party Advisory)
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf (Third Party Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=2154ab83e14ede338d2ede9bbe5cdfce5d5a6c9e ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-23839[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2021-02-16T17:15:13.190
+[1;34mÚltima modificación:[0m 2024-11-21T05:51:55.003
+
+[1;33mDESCRIPCIÓN:[0m
+OpenSSL versión 1.0.2 soporta SSLv2. Si un cliente intenta negociar SSLv2 con un
+servidor que está configurado para soportar tanto SSLv2 como versiones más
+recientes de SSL y TLS, entonces se hace una comprobación de un ataque de
+retroceso de versión cuando se deshace una firma RSA. Los clientes que soportan
+versiones de SSL o TLS superiores a SSLv2 deben usar una forma especial de
+relleno. Un servidor que soporta una versión superior a SSLv2 debe rechazar los
+intentos de conexión de un cliente en el que esté presente esta forma especial
+de relleno, porque esto indica que se ha producido un retroceso de versión (es
+decir, tanto el cliente como el servidor soportan una versión superior a SSLv2,
+y sin embargo esta es la versión que se está requiriendo). La implementación de
+esta comprobación de padding invirtió la lógica para que el intento de conexión
+sea aceptado si el padding está presente, y rechazado si está ausente. Esto
+significa que tal servidor aceptará una conexión si se ha producido un ataque de
+retroceso de versión. Además, el servidor rechazará erróneamente una conexión si
+se realiza un intento de conexión SSLv2 normal. Sólo los servidores OpenSSL
+versión 1.0.2 desde la versión 1.0.2s hasta la 1.0.2x están afectados por este
+problema. Para ser vulnerable, un servidor versión 1.0.2 debe 1) haber
+configurado la compatibilidad con SSLv2 en tiempo de compilación (está
+desactivada por defecto), 2) haber configurado la compatibilidad con SSLv2 en
+tiempo de ejecución (está deshabilitada por defecto), 3) haber configurado los
+ciphersuites de SSLv2 (no están en la lista de ciphersuites por defecto) OpenSSL
+versión 1.1.1 no presenta compatibilidad con SSLv2 y, por tanto, no es
+vulnerable a este problema. El error subyacente está en la implementación de la
+función RSA_padding_check_SSLv23(). Esto también afecta al modo de relleno
+RSA_SSLV23_PADDING usado por otras funciones. Aunque la versión 1.1.1 no soporta
+SSLv2, la función RSA_padding_check_SSLv23() sigue existiendo, al igual que el
+modo de relleno RSA_SSLV23_PADDING. Las aplicaciones que llamen directamente a
+esa función o utilicen ese modo de relleno se encontrarán con este problema. Sin
+embargo, como no existe soporte para el protocolo SSLv2 en la versión 1.1.1,
+esto se considera un error y no un problema de seguridad en esa versión. OpenSSL
+versión 1.0.2 está fuera de soporte y ya no recibe actualizaciones públicas. Los
+clientes de soporte Premium de OpenSSL versión 1.0.2 deben actualizar a la
+versión 1.0.2y. Los demás usuarios deben actualizar a la versión 1.1.1j.
+Corregido en OpenSSL versión 1.0.2y (Afectó versiones 1.0.2s-1.0.2x)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 3.7 (LOW)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: LOW, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf (Patch, Third Party Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=30919ab80a478f2d81f2e9acdcca3fa4740cd547 ()
+  - https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44846 (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-23840[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2021-02-16T17:15:13.300
+[1;34mÚltima modificación:[0m 2024-11-21T05:51:55.210
+
+[1;33mDESCRIPCIÓN:[0m
+Las llamadas a EVP_CipherUpdate, EVP_EncryptUpdate y EVP_DecryptUpdate, pueden
+desbordar el argumento de la longitud de salida en algunos casos en los que la
+longitud de entrada está cerca de la longitud máxima permitida para un entero en
+la plataforma. En tales casos, el valor de retorno de la llamada a la función
+será 1 (indicando success), pero el valor de la longitud de salida será
+negativo. Esto podría causar que las aplicaciones se comporten de forma
+incorrecta o se bloqueen. Las versiones de OpenSSL 1.1.1i e inferiores están
+afectadas por este problema. Los usuarios de estas versiones deberían actualizar
+a OpenSSL versión 1.1.1j. Las versiones de OpenSSL 1.0.2x e inferiores están
+afectadas por este problema. Sin embargo, OpenSSL versión 1.0.2 está fuera de
+soporte y ya no recibe actualizaciones públicas. Los clientes con soporte
+Premium de OpenSSL versión 1.0.2 deben actualizar a la versión 1.0.2y. Los demás
+usuarios deben actualizar a la versión 1.1.1j. Corregido en OpenSSL versión
+1.1.1j (Afectó versiones 1.1.1-1.1.1i). Corregido en OpenSSL versión 1.0.2y
+(Afectó versiones 1.0.2-1.0.2x)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.5 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2y)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1j)
+
+[1;33mREFERENCIAS:[0m
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf (Third Party Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=6a51b9e1d0cf0bf8515f7201b68fb0a3482b3dc1 ()
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=9b1129239f3ebb1d1c98ce9ed41d5c9476c47cb2 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-23841[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2021-02-16T17:15:13.377
+[1;34mÚltima modificación:[0m 2024-11-21T05:51:55.460
+
+[1;33mDESCRIPCIÓN:[0m
+La función de la API pública de OpenSSL X509_issuer_and_serial_hash() intenta
+crear un valor hash único basado en los datos del emisor y del número de serie
+contenidos en un certificado X509. Sin embargo, no gestiona correctamente los
+errores que puedan producirse al analizar el campo del emisor (lo que podría
+ocurrir si el campo del emisor se construye de forma maliciosa). Esto puede dar
+lugar a un desvío de puntero NULL y a un fallo que conduzca a un posible ataque
+de denegación de servicio. La función X509_issuer_and_serial_hash() nunca es
+llamada directamente por OpenSSL, por lo que las aplicaciones sólo son
+vulnerables si utilizan esta función directamente y lo hacen con certificados
+que pueden haber sido obtenidos de fuentes no fiables. Las versiones de OpenSSL
+1.1.1i y posteriores están afectadas por este problema. Los usuarios de estas
+versiones deberían actualizar a OpenSSL 1.1.1j. Las versiones de OpenSSL 1.0.2x
+e inferiores se ven afectadas por este problema. Sin embargo, OpenSSL 1.0.2 está
+fuera de soporte y ya no recibe actualizaciones públicas. Los clientes con
+soporte Premium de OpenSSL 1.0.2 deben actualizar a la versión 1.0.2y. Los demás
+usuarios deben actualizar a la versión 1.1.1j. Corregido en OpenSSL 1.1.1j
+(Afectado 1.1.1-1.1.1i). Corregido en OpenSSL 1.0.2y (Afectado 1.0.2-1.0.2x)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.9 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2y)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1j)
+
+[1;33mREFERENCIAS:[0m
+  - http://seclists.org/fulldisclosure/2021/May/67 (Mailing List, Third Party Advisory)
+  - http://seclists.org/fulldisclosure/2021/May/68 (Mailing List, Third Party Advisory)
+  - http://seclists.org/fulldisclosure/2021/May/70 (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-3712[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2021-08-24T15:15:09.533
+[1;34mÚltima modificación:[0m 2024-11-21T06:22:13.290
+
+[1;33mDESCRIPCIÓN:[0m
+Las cadenas ASN.1 se representan internamente en OpenSSL como una estructura
+ASN1_STRING que contiene un búfer que contiene los datos de la cadena y un campo
+que contiene la longitud del búfer. Esto contrasta con las cadenas C normales,
+que se representan como un búfer para los datos de la cadena que termina con un
+byte NUL (0). Aunque no es un requisito estricto, las cadenas ASN.1 que se
+analizan usando las propias funciones "d2i" de OpenSSL (y otras funciones de
+análisis similares), así como cualquier cadena cuyo valor ha sido ajustado con
+la función ASN1_STRING_set(), terminarán adicionalmente con NUL la matriz de
+bytes en la estructura ASN1_STRING. Sin embargo, es posible que las aplicaciones
+construyan directamente estructuras ASN1_STRING válidas que no terminen en NUL
+la matriz de bytes, ajustando directamente los campos "data" y "length" en la
+matriz ASN1_STRING. Esto también puede ocurrir usando la función
+ASN1_STRING_set0(). Se ha detectado que numerosas funciones de OpenSSL que
+imprimen datos ASN.1 asumen que la matriz de bytes ASN1_STRING estará terminada
+en NUL, aunque esto no está garantizado para las cadenas que han sido
+construidas directamente. Cuando una aplicación pide que se imprima una
+estructura ASN.1, y cuando esa estructura ASN.1 contiene ASN1_STRINGs que han
+sido construidos directamente por la aplicación sin terminar en NUL el campo
+"data", entonces puede ocurrir un desbordamiento del buffer de lectura. Lo mismo
+puede ocurrir durante el procesamiento de las restricciones de nombre de los
+certificados (por ejemplo, si un certificado ha sido construido directamente por
+la aplicación en lugar de cargarlo por medio de las funciones de análisis de
+OpenSSL, y el certificado contiene estructuras ASN1_STRING sin terminación NUL).
+También puede ocurrir en las funciones X509_get1_email(), X509_REQ_get1_email()
+y X509_get1_ocsp(). Si un actor malicioso puede hacer que una aplicación
+construya directamente un ASN1_STRING y luego lo procese a mediante una de las
+funciones de OpenSSL afectadas, este problema podría ser alcanzado. Esto podría
+resultar en un bloqueo (causando un ataque de Denegación de Servicio). También
+podría resultar en la revelación de contenidos de memoria privada (como claves
+privadas, o texto plano confidencial). Corregido en OpenSSL versión 1.1.1l
+(Afectada 1.1.1-1.1.1k). Corregido en OpenSSL versión 1.0.2za (Afectada
+1.0.2-1.0.2y).
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.4 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2za)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1l)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2021/08/26/2 (Mailing List, Third Party Advisory)
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-244969.pdf (Patch, Third Party Advisory)
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf (Patch, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-4160[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2022-01-28T22:15:15.133
+[1;34mÚltima modificación:[0m 2024-11-21T06:37:02.273
+
+[1;33mDESCRIPCIÓN:[0m
+Se presenta un bug de propagación carry en el procedimiento de cuadratura de
+MIPS32 y MIPS64. Muchos algoritmos de la CE están afectados, incluyendo algunas
+de las curvas por defecto de TLS versión 1.3. El impacto no es analizado en
+detalle, porque los requisitos previos para el ataque son considerados poco
+probables e incluyen el reuso de claves privadas. El análisis sugiere que los
+ataques contra RSA y DSA como resultado de este defecto serían muy difíciles de
+llevar a cabo y no se consideran probables. Los ataques contra DH se consideran
+apenas factibles (aunque muy difíciles) porque la mayor parte del trabajo
+necesario para deducir información sobre una clave privada puede llevarse a cabo
+fuera de línea. La cantidad de recursos necesarios para un ataque de este tipo
+sería significativa. Sin embargo, para que un ataque a TLS tenga sentido, el
+servidor tendría que compartir la clave privada DH entre múltiples clientes, lo
+que ya no es una opción desde CVE-2016-0701. Este problema afecta a OpenSSL
+versiones 1.0.2, 1.1.1 y 3.0.0. Se ha abordado en versiones 1.1.1m y 3.0.1 el 15
+de diciembre de 2021. En el caso de la versión 1.0.2, ha sido  abordada en el
+commit 6fc1aaaf3 de git, que sólo está disponible para los clientes de soporte
+premium. Estará disponible en la versión 1.0.2zc cuando sea publicada. El
+problema sólo afecta a OpenSSL en plataformas MIPS. Corregido en OpenSSL versión
+3.0.1 (Afectado  versión 3.0.0). Corregido en OpenSSL versión 1.1.1m (Afectado
+versión 1.1.1-1.1.1l). Corregido en OpenSSL versión 1.0.2zc-dev (Afectado
+versión 1.0.2-1.0.2zb)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.9 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: NONE, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1m)
+  - cpe:2.3:a:openssl:openssl:3.0.0:-:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha1:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha10:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha11:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha12:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha13:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha14:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha15:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha16:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha17:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha2:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha3:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha4:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha5:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha6:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha7:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha8:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:alpha9:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:beta1:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:3.0.0:beta2:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf (Third Party Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=3bf7b73ea7123045b8f972badc67ed6878e6c37f ()
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=6fc1aaaf303185aa5e483e06bdfae16daa9193a7 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2022-0778[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2022-03-15T17:15:08.513
+[1;34mÚltima modificación:[0m 2024-11-21T06:39:22.540
+
+[1;33mDESCRIPCIÓN:[0m
+La función BN_mod_sqrt(), que calcula una raíz cuadrada modular, contiene un
+error que puede causar un bucle eterno para módulos no primos. Internamente,
+esta función es usado cuando son analizados certificados que contienen claves
+públicas de curva elíptica en forma comprimida o parámetros de curva elíptica
+explícitos con un punto base codificado en forma comprimida. Es posible
+desencadenar el bucle infinito si es diseñado un certificado con parámetros de
+curva explícitos no válidos. Dado que el análisis del certificado es realizado
+antes de la verificación de la firma del certificado, cualquier proceso que
+analice un certificado suministrado externamente puede ser objeto de un ataque
+de denegación de servicio. El bucle infinito también puede alcanzarse cuando son
+analizadas claves privadas diseñadas, ya que pueden contener parámetros
+explícitos de la curva elíptica. Por lo tanto, las situaciones vulnerables
+incluyen: - Clientes TLS que consumen certificados de servidor - Servidores TLS
+que consumen certificados de cliente - Proveedores de hosting que toman
+certificados o claves privadas de clientes - Autoridades de certificación que
+analizan peticiones de certificación de suscriptores - Cualquier otra cosa que
+analice parámetros de curva elíptica ASN.1 También cualquier otra aplicación que
+utilice BN_mod_sqrt() donde el atacante pueda controlar los valores de los
+parámetros es vulnerable a este problema de DoS. En OpenSSL versión 1.0.2, la
+clave pública no es analizada durante el análisis inicial del certificado, lo
+que dificulta ligeramente la activación del bucle infinito. Sin embargo,
+cualquier operación que requiera la clave pública del certificado desencadenará
+el bucle infinito. En particular, el atacante puede usar un certificado
+autofirmado para desencadenar el bucle durante la verificación de la firma del
+certificado. Este problema afecta a OpenSSL versiones 1.0.2, 1.1.1 y 3.0. Fue
+abordado en las versiones 1.1.1n y 3.0.2 del 15 de marzo de 2022. Corregido en
+OpenSSL versión 3.0.2 (Afectado 3.0.0,3.0.1). Corregido en OpenSSL versión
+1.1.1n (Afectado 1.1.1-1.1.1m). Corregido en OpenSSL versión 1.0.2zd (Afectado
+1.0.2-1.0.2zc)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.5 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zd)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1n)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.2)
+
+[1;33mREFERENCIAS:[0m
+  - http://packetstormsecurity.com/files/167344/OpenSSL-1.0.2-1.1.1-3.0-BN_mod_sqrt-Infinite-Loop.html (Third Party Advisory, VDB Entry)
+  - http://seclists.org/fulldisclosure/2022/May/33 (Mailing List, Third Party Advisory)
+  - http://seclists.org/fulldisclosure/2022/May/35 (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2022-1292[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2022-05-03T16:15:18.823
+[1;34mÚltima modificación:[0m 2025-05-05T17:17:33.950
+
+[1;33mDESCRIPCIÓN:[0m
+El script c_rehash no sanea apropiadamente los meta caracteres del shell para
+evitar la inyección de comandos. Este script es distribuido por algunos sistemas
+operativos de manera que es ejecutado automáticamente. En dichos sistemas
+operativos, un atacante podría ejecutar comandos arbitrarios con los privilegios
+del script. El uso del script c_rehash es considerado obsoleto y debe ser
+sustituido por la herramienta de línea de comandos OpenSSL rehash. Corregido en
+OpenSSL versión 3.0.3 (Afectado 3.0.0,3.0.1,3.0.2). Corregido en OpenSSL versión
+1.1.1o (Afectado 1.1.1-1.1.1n). Corregido en OpenSSL versión 1.0.2ze (Afectado
+1.0.2-1.0.2zd)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2ze)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1o)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.3)
+
+[1;33mREFERENCIAS:[0m
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-953464.pdf ()
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=1ad73b4d27bd8c1b369a3cd453681d3a4f1bb9b2 ()
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=548d3f280a6e737673f5b61fce24bb100108dfeb ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2022-2068[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2022-06-21T15:15:09.060
+[1;34mÚltima modificación:[0m 2025-05-05T17:18:08.610
+
+[1;33mDESCRIPCIÓN:[0m
+Además de una inyección de comandos de shell c_rehash identificada en
+CVE-2022-1292, se encontraron otras circunstancias en las que el script c_rehash
+no sanea adecuadamente los metacaracteres de shell para evitar la inyección de
+comandos mediante la revisión del código. Cuando fue corregida la CVE-2022-1292
+no ha sido detectado que se presentan otros lugares en el script en los que los
+nombres de archivo de los certificados a los que es aplicado el hash son pasados
+posiblemente a un comando ejecutado mediante el shell. Este script es
+distribuido por algunos sistemas operativos de manera que es ejecutado
+automáticamente. En dichos sistemas operativos, un atacante podría ejecutar
+comandos arbitrarios con los privilegios del script. El uso del script c_rehash
+es considerado obsoleto y debe ser sustituido por la herramienta de línea de
+comandos OpenSSL rehash. Corregido en OpenSSL versión 3.0.4 (Afectados
+3.0.0,3.0.1,3.0.2,3.0.3). Corregido en OpenSSL versión 1.1.1p (Afectado
+1.1.1-1.1.1o). Corregido en OpenSSL versión 1.0.2zf (Afectado 1.0.2-1.0.2ze)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zf)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1p)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.4)
+
+[1;33mREFERENCIAS:[0m
+  - https://cert-portal.siemens.com/productcert/pdf/ssa-332410.pdf (Third Party Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=2c9c35870601b4a44d86ddbf512b38df38285cfa ()
+  - https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=7a9c027159fe9e1bbc2cd38a8a2914bff0d5abd9 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2022-4304[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-02-08T20:15:23.887
+[1;34mÚltima modificación:[0m 2025-03-20T21:15:14.890
+
+[1;33mDESCRIPCIÓN:[0m
+A timing based side channel exists in the OpenSSL RSA Decryption implementation
+which could be sufficient to recover a plaintext across a network in a
+Bleichenbacher style attack. To achieve a successful decryption an attacker
+would have to be able to send a very large number of trial messages for
+decryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5, RSA-
+OEAP and RSASVE.  For example, in a TLS connection, RSA is commonly used by a
+client to send an encrypted pre-master secret to the server. An attacker that
+had observed a genuine connection between a client and a server could use this
+flaw to send trial messages to the server and record the time taken to process
+them. After a sufficiently large number of messages the attacker could recover
+the pre-master secret used for the original connection and thus be able to
+decrypt the application data sent over that connection.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.9 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: NONE, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zg)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1t)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.8)
+
+[1;33mREFERENCIAS:[0m
+  - https://security.gentoo.org/glsa/202402-08 ()
+  - https://www.openssl.org/news/secadv/20230207.txt (Vendor Advisory)
+  - https://security.gentoo.org/glsa/202402-08 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-0215[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-02-08T20:15:24.107
+[1;34mÚltima modificación:[0m 2025-05-05T16:15:24.900
+
+[1;33mDESCRIPCIÓN:[0m
+The public API function BIO_new_NDEF is a helper function used for streaming
+ASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the
+SMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by
+end user applications.  The function receives a BIO from the caller, prepends a
+new BIO_f_asn1 filter BIO onto the front of it to form a BIO chain, and then
+returns the new head of the BIO chain to the caller. Under certain conditions,
+for example if a CMS recipient public key is invalid, the new filter BIO is
+freed and the function returns a NULL result indicating a failure. However, in
+this case, the BIO chain is not properly cleaned up and the BIO passed by the
+caller still retains internal pointers to the previously freed filter BIO. If
+the caller then goes on to call BIO_pop() on the BIO then a use-after-free will
+occur. This will most likely result in a crash.    This scenario occurs directly
+in the internal function B64_write_ASN1() which may cause BIO_new_NDEF() to be
+called and will subsequently call BIO_pop() on the BIO. This internal function
+is in turn called by the public API functions PEM_write_bio_ASN1_stream,
+PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream, SMIME_write_ASN1,
+SMIME_write_CMS and SMIME_write_PKCS7.  Other public API functions that may be
+impacted by this include i2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7,
+i2d_CMS_bio_stream and i2d_PKCS7_bio_stream.  The OpenSSL cms and smime command
+line applications are similarly affected.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.5 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zg)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1t)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.8)
+
+[1;33mREFERENCIAS:[0m
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=8818064ce3c3c0f1b740a5aaba2a987e75bfbafd (Patch, Vendor Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9816136fe31d92ace4037d5da5257f763aeeb4eb (Patch, Vendor Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=c3829dd8825c654652201e16f8a0a0c46ee3f344 (Patch, Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-0286[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-02-08T20:15:24.267
+[1;34mÚltima modificación:[0m 2025-03-20T21:15:16.550
+
+[1;33mDESCRIPCIÓN:[0m
+There is a type confusion vulnerability relating to X.400 address processing
+inside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but
+the public structure definition for GENERAL_NAME incorrectly specified the type
+of the x400Address field as ASN1_TYPE. This field is subsequently interpreted by
+the OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an
+ASN1_STRING.  When CRL checking is enabled (i.e. the application sets the
+X509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass
+arbitrary pointers to a memcmp call, enabling them to read memory contents or
+enact a denial of service. In most cases, the attack requires the attacker to
+provide both the certificate chain and CRL, neither of which need to have a
+valid signature. If the attacker only controls one of these inputs, the other
+input must already contain an X.400 address as a CRL distribution point, which
+is uncommon. As such, this vulnerability is most likely to only affect
+applications which have implemented their own functionality for retrieving CRLs
+over a network.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.4 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zg)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1t)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.8)
+
+[1;33mREFERENCIAS:[0m
+  - https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2-relnotes.txt (Third Party Advisory)
+  - https://ftp.openbsd.org/pub/OpenBSD/patches/7.2/common/018_x509.patch.sig (Third Party Advisory)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2c6c9d439b484e1ba9830d8454a34fa4f80fdfe9 (Patch, Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-0464[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-03-22T17:15:13.130
+[1;34mÚltima modificación:[0m 2025-05-05T16:15:26.103
+
+[1;33mDESCRIPCIÓN:[0m
+A security vulnerability has been identified in all supported versions  of
+OpenSSL related to the verification of X.509 certificate chains that include
+policy constraints.  Attackers may be able to exploit this vulnerability by
+creating a malicious certificate chain that triggers exponential use of
+computational resources, leading to a denial-of-service (DoS) attack on affected
+systems.  Policy processing is disabled by default but can be enabled by passing
+the `-policy' argument to the command line utilities or by calling the
+`X509_VERIFY_PARAM_set1_policies()' function.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.5 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zh)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1u)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.9)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.1)
+
+[1;33mREFERENCIAS:[0m
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2017771e2db3e2b96f89bbe8766c3209f6a99545 (Mailing List, Patch)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2dcd4f1e3115f38cefa43e3efbe9b801c27e642e (Broken Link)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=879f7080d7e141f415c79eaa3a8ac4a3dad0348b (Mailing List, Patch)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-0465[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-03-28T15:15:06.820
+[1;34mÚltima modificación:[0m 2025-02-18T21:15:13.877
+
+[1;33mDESCRIPCIÓN:[0m
+Applications that use a non-default option when verifying certificates may be
+vulnerable to an attack from a malicious CA to circumvent certain checks.
+Invalid certificate policies in leaf certificates are silently ignored by
+OpenSSL and other certificate policy checks are skipped for that certificate. A
+malicious CA could use this to deliberately assert invalid certificate policies
+in order to circumvent policy checking on the certificate altogether.  Policy
+processing is disabled by default but can be enabled by passing the `-policy'
+argument to the command line utilities or by calling the
+`X509_VERIFY_PARAM_set1_policies()' function.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: LOW, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zh)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1u)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.9)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.1)
+
+[1;33mREFERENCIAS:[0m
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=10325176f3d3e98c6e2b3bf5ab1e3b334de6947a (Broken Link)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=1dd43e0709fece299b15208f36cc7c76209ba0bb (Mailing List, Patch)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=b013765abfa80036dc779dd0e50602c57bb3bf95 (Mailing List, Patch)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-0466[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-03-28T15:15:06.880
+[1;34mÚltima modificación:[0m 2025-02-19T18:15:22.177
+
+[1;33mDESCRIPCIÓN:[0m
+The function X509_VERIFY_PARAM_add0_policy() is documented to implicitly enable
+the certificate policy check when doing certificate verification. However the
+implementation of the function does not enable the check which allows
+certificates with invalid or incorrect policies to pass the certificate
+verification.  As suddenly enabling the policy check could break existing
+deployments it was decided to keep the existing behavior of the
+X509_VERIFY_PARAM_add0_policy() function.  Instead the applications that require
+OpenSSL to perform certificate policy check need to use
+X509_VERIFY_PARAM_set1_policies() or explicitly enable the policy check by
+calling X509_VERIFY_PARAM_set_flags() with the X509_V_FLAG_POLICY_CHECK flag
+argument.  Certificate policy checks are disabled by default in OpenSSL and are
+not commonly used by applications.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: LOW, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zh)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1u)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.9)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.1)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2023/09/28/4 ()
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=0d16b7e99aafc0b4a6d729eec65a411a7e025f0a (Mailing List, Patch)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=51e8a84ce742db0f6c70510d0159dad8f7825908 (Mailing List, Patch)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-2650[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-05-30T14:15:09.683
+[1;34mÚltima modificación:[0m 2025-03-19T16:15:21.890
+
+[1;33mDESCRIPCIÓN:[0m
+Issue summary: Processing some specially crafted ASN.1 object identifiers or
+data containing them may be very slow.  Impact summary: Applications that use
+OBJ_obj2txt() directly, or use any of the OpenSSL subsystems OCSP, PKCS7/SMIME,
+CMS, CMP/CRMF or TS with no message size limit may experience notable to very
+long delays when processing those messages, which may lead to a Denial of
+Service.  An OBJECT IDENTIFIER is composed of a series of numbers - sub-
+identifiers - most of which have no size limit.  OBJ_obj2txt() may be used to
+translate an ASN.1 OBJECT IDENTIFIER given in DER encoding form (using the
+OpenSSL type ASN1_OBJECT) to its canonical numeric text form, which are the sub-
+identifiers of the OBJECT IDENTIFIER in decimal form, separated by periods.
+When one of the sub-identifiers in the OBJECT IDENTIFIER is very large (these
+are sizes that are seen as absurdly large, taking up tens or hundreds of KiBs),
+the translation to a decimal number in text may take a very long time.  The time
+complexity is O(n^2) with 'n' being the size of the sub-identifiers in bytes
+(*).  With OpenSSL 3.0, support to fetch cryptographic algorithms using names /
+identifiers in string form was introduced.  This includes using OBJECT
+IDENTIFIERs in canonical numeric text form as identifiers for fetching
+algorithms.  Such OBJECT IDENTIFIERs may be received through the ASN.1 structure
+AlgorithmIdentifier, which is commonly used in multiple protocols to specify
+what cryptographic algorithm should be used to sign or verify, encrypt or
+decrypt, or digest passed data.  Applications that call OBJ_obj2txt() directly
+with untrusted data are affected, with any version of OpenSSL.  If the use is
+for the mere purpose of display, the severity is considered low.  In OpenSSL 3.0
+and newer, this affects the subsystems OCSP, PKCS7/SMIME, CMS, CMP/CRMF or TS.
+It also impacts anything that processes X.509 certificates, including simple
+things like verifying its signature.  The impact on TLS is relatively low,
+because all versions of OpenSSL have a 100KiB limit on the peer's certificate
+chain.  Additionally, this only impacts clients, or servers that have explicitly
+enabled client authentication.  In OpenSSL 1.1.1 and 1.0.2, this only affects
+displaying diverse objects, such as X.509 certificates.  This is assumed to not
+happen in such a way that it would cause a Denial of Service, so these versions
+are considered not affected by this issue in such a way that it would be cause
+for concern, and the severity is therefore considered low.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 6.5 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zh)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1u)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.9)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.1)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2023/05/30/1 (Mailing List)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=423a2bc737a908ad0c77bda470b2b59dc879936b (Mailing List, Patch)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=853c5e56ee0b8650c73140816bb8b91d6163422c (Broken Link)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-3817[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-07-31T16:15:10.497
+[1;34mÚltima modificación:[0m 2025-05-05T16:15:47.343
+
+[1;33mDESCRIPCIÓN:[0m
+Issue summary: Checking excessively long DH keys or parameters may be very slow.
+Impact summary: Applications that use the functions DH_check(), DH_check_ex() or
+EVP_PKEY_param_check() to check a DH key or DH parameters may experience long
+delays. Where the key or parameters that are being checked have been obtained
+from an untrusted source this may lead to a Denial of Service.  The function
+DH_check() performs various checks on DH parameters. After fixing CVE-2023-3446
+it was discovered that a large q parameter value can also trigger an overly long
+computation during some of these checks. A correct q value, if present, cannot
+be larger than the modulus p parameter, thus it is unnecessary to perform these
+checks if q is larger than p.  An application that calls DH_check() and supplies
+a key or parameters obtained from an untrusted source could be vulnerable to a
+Denial of Service attack.  The function DH_check() is itself called by a number
+of other OpenSSL functions. An application calling any of those other functions
+may similarly be affected. The other functions affected by this are
+DH_check_ex() and EVP_PKEY_param_check().  Also vulnerable are the OpenSSL
+dhparam and pkeyparam command line applications when using the "-check" option.
+The OpenSSL SSL/TLS implementation is not affected by this issue.  The OpenSSL
+3.0 and 3.1 FIPS providers are not affected by this issue.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: LOW
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.10)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.2)
+  - cpe:2.3:a:openssl:openssl:1.0.2:-:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2:beta1:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2:beta2:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2:beta3:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2a:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2b:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2c:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2d:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2e:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2f:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2g:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2h:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2i:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2j:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2k:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2l:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2m:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2n:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2o:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2p:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2q:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2r:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2s:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2t:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2u:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2v:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2w:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2x:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2y:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2za:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2zb:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2zc:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2zd:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2ze:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2zf:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2zg:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.0.2zh:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:-:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre1:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre2:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre3:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre4:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre5:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre6:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre7:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre8:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1:pre9:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1a:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1b:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1c:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1d:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1e:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1f:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1g:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1h:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1i:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1j:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1k:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1l:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1m:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1n:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1o:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1p:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1q:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1r:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1s:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1t:*:*:*:*:*:*:*
+  - cpe:2.3:a:openssl:openssl:1.1.1u:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=6a1eb62c29db6cb5eec707f9338aee00f44e26f5 (Mailing List, Patch)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=869ad69aadd985c7b8ca6f4e5dd0eb274c9f3644 (Broken Link)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=9002fd07327a91f35ba6c1307e71fa6fd4409b7f (Mailing List, Patch)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-5678[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-11-06T16:15:42.670
+[1;34mÚltima modificación:[0m 2024-11-21T08:42:15.573
+
+[1;33mDESCRIPCIÓN:[0m
+Resumen del problema: generar claves X9.42 DH excesivamente largas o comprobar
+claves o parámetros X9.42 DH excesivamente largos puede ser muy lento. Resumen
+de impacto: las aplicaciones que utilizan las funciones DH_generate_key() para
+generar una clave DH X9.42 pueden experimentar grandes retrasos. Del mismo modo,
+las aplicaciones que utilizan DH_check_pub_key(), DH_check_pub_key_ex() o
+EVP_PKEY_public_check() para comprobar una clave X9.42 DH o parámetros X9.42 DH
+pueden experimentar grandes retrasos. Cuando la clave o los parámetros que se
+están verificando se obtuvieron de una fuente que no es confiable, esto puede
+dar lugar a una Denegación de Servicio. Mientras que DH_check() realiza todas
+las comprobaciones necesarias (a partir de CVE-2023-3817), DH_check_pub_key() no
+realiza ninguna de estas comprobaciones y, por lo tanto, es vulnerable a
+parámetros P y Q excesivamente grandes. Del mismo modo, aunque DH_generate_key()
+realiza una verificación de una P excesivamente grande, no verifica una Q
+excesivamente grande. Una aplicación que llama a DH_generate_key() o
+DH_check_pub_key() y proporciona una clave o parámetros obtenidos de una fuente
+que no es de confianza podría ser vulnerable a un ataque de denegación de
+servicio. DH_generate_key() y DH_check_pub_key() también son llamados por otras
+funciones de OpenSSL. Una aplicación que llame a cualquiera de esas otras
+funciones también puede verse afectada. Las otras funciones afectadas por esto
+son DH_check_pub_key_ex(), EVP_PKEY_public_check() y EVP_PKEY_generate().
+También son vulnerables la aplicación de línea de comandos OpenSSL pkey cuando
+se utiliza la opción "-pubcheck", así como la aplicación de línea de comandos
+OpenSSL genpkey. La implementación de OpenSSL SSL/TLS no se ve afectada por este
+problema. Los proveedores FIPS OpenSSL 3.0 y 3.1 no se ven afectados por este
+problema.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: LOW
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zj)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1x)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.13)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.5)
+
+[1;33mREFERENCIAS:[0m
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=34efaef6c103d636ab507a0cc34dca4d3aecc055 (Broken Link)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=710fee740904b6290fef0dd5536fbcedbc38ff0c (Broken Link)
+  - https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db925ae2e65d0d925adef429afc37f75bd1c2017 (Mailing List, Patch)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2024-0727[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2024-01-26T09:15:07.637
+[1;34mÚltima modificación:[0m 2024-11-21T08:47:13.723
+
+[1;33mDESCRIPCIÓN:[0m
+Resumen del problema: el procesamiento de un archivo PKCS12 con formato
+malintencionado puede hacer que OpenSSL falle y provoque un posible ataque de
+denegación de servicio. Resumen de impacto: las aplicaciones que cargan archivos
+en formato PKCS12 desde fuentes que no son de confianza pueden finalizar
+abruptamente. Un archivo en formato PKCS12 puede contener certificados y claves
+y puede provenir de una fuente que no es de confianza. La especificación PKCS12
+permite que ciertos campos sean NULL, pero OpenSSL no verifica correctamente
+este caso. Esto puede provocar una desreferencia del puntero NULL que provoque
+el bloqueo de OpenSSL. Si una aplicación procesa archivos PKCS12 de una fuente
+que no es de confianza utilizando las API de OpenSSL, esa aplicación será
+vulnerable a este problema. Las API de OpenSSL que son vulnerables a esto son:
+PKCS12_parse(), PKCS12_unpack_p7data(), PKCS12_unpack_p7encdata(),
+PKCS12_unpack_authsafes() y PKCS12_newpass(). También solucionamos un problema
+similar en SMIME_write_PKCS7(). Sin embargo, dado que esta función está
+relacionada con la escritura de datos, no la consideramos importante para la
+seguridad. Los módulos FIPS en 3.2, 3.1 y 3.0 no se ven afectados por este
+problema.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 5.5 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.0.2zj)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 1.1.1x)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.0.13)
+  - cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:* (Versiones anteriores a 3.1.5)
+  - cpe:2.3:a:openssl:openssl:3.2.0:-:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - https://github.com/openssl/openssl/commit/09df4395b5071217b76dc7d3d2e630eb8c5a79c2 (Patch)
+  - https://github.com/openssl/openssl/commit/775acfdbd0c6af9ac855f34969cdab0c0c90844a (Patch)
+  - https://github.com/openssl/openssl/commit/d135eeab8a5dbf72b3da5240bab9ddb7678dbd2c (Patch)
+================================================================================
+
+type: CydxComponentType.library
+name: struts
+version: 2.3.15
+description: None
+group: apache
+publisher: None
+CPE: cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+--------------------------------------
+CPE STRING: cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2009-1275[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2009-04-09T15:08:35.813
+[1;34mÚltima modificación:[0m 2025-04-09T00:30:58.490
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Tiles v2.1 anteriores a v2.1.2, como las usadas en Apache Struts y otros
+productos, evalúan las expresiones del lenguaje de expresiones (EL), dos veces
+en ciertas circunstancias, lo que permite a atacantes remotos conducir ataques
+de secuencias de comandos en sitios cruzados (XSS) para obtener información
+sensible a través de vectores no especificados, relativo a (1)
+tiles:putAttribute y (2) etiquetas JSP tiles:insertTemplate.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:tiles:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:tiles:2.1.1:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://svn.apache.org/viewvc/tiles/framework/trunk/src/site/apt/security/security-bulletin-1.apt?revision=741913 (Vendor Advisory)
+  - http://www.securityfocus.com/bid/34657 ()
+  - https://issues.apache.org/struts/browse/TILES-351 (Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2012-0394[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2012-01-08T15:55:01.467
+[1;34mÚltima modificación:[0m 2025-04-11T00:51:21.963
+
+[1;33mDESCRIPCIÓN:[0m
+** CUESTIONADA ** El componente DebuggingInterceptor en Apache Struts antes de
+la versión v2.3.1.1, cuando se usa el modo desarrollador (developer), permite
+ejecutar comandos de su elección a atacantes remotos a través de vectores no
+especificados. NOTA: el vendedor indica que este comportamiento "no es una
+vulnerabilidad de seguridad en si misma".
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://archives.neohapsis.com/archives/bugtraq/2012-01/0031.html (Broken Link)
+  - http://struts.apache.org/2.x/docs/s2-008.html (Vendor Advisory)
+  - http://struts.apache.org/2.x/docs/version-notes-2311.html (Release Notes, Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2013-2248[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2013-07-20T03:37:30.717
+[1;34mÚltima modificación:[0m 2025-04-11T00:51:21.963
+
+[1;33mDESCRIPCIÓN:[0m
+Múltiples vulnerabilidades de redirección en Apache Struts v2.0.0 hasta v2.3.15
+permite a atacantes remotos redirigir a los usuarios a sitios web arbitrarios y
+llevar a cabo ataques de phishing mediante una URL en un parámetro usando (1)
+redirect: o (2) redirectAction:
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/release/2.3.x/docs/s2-017.html (Vendor Advisory)
+  - http://www.fujitsu.com/global/support/software/security/products-f/interstage-bpm-analytics-201301e.html ()
+  - http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2013-2251[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2013-07-20T03:37:30.737
+[1;34mÚltima modificación:[0m 2025-04-11T00:51:21.963
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts v2.0.0 hasta v2.3.15 permite a atacantes remotos ejecutar
+expresiones OGNL arbitrarias mediante un parámetro con una  (1)acción:, (2)
+redirect:, o (3)  redirectAction:
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:archiva:*:*:*:*:*:*:*:* (Versiones anteriores a 1.3.8)
+  - cpe:2.3:a:apache:archiva:1.2:-:*:*:*:*:*:*
+  - cpe:2.3:a:apache:archiva:1.2.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://archiva.apache.org/security.html (Product)
+  - http://cxsecurity.com/issue/WLB-2014010087 (Exploit, Third Party Advisory)
+  - http://osvdb.org/98445 (Broken Link)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2013-4310[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2013-09-30T21:55:09.487
+[1;34mÚltima modificación:[0m 2025-04-11T00:51:21.963
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts v2.0.0 hasta v2.3.15.1 permite a atacantes remotos evitar los
+controles de acceso a través de una acción manipulada: prefix.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://archives.neohapsis.com/archives/bugtraq/2013-09/0107.html (Patch)
+  - http://archives.neohapsis.com/archives/bugtraq/2013-10/0083.html ()
+  - http://secunia.com/advisories/54919 (Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2013-4316[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2013-09-30T21:55:09.630
+[1;34mÚltima modificación:[0m 2025-04-11T00:51:21.963
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts 2.0.0 hasta la versión 2.3.15.1 habilita por defecto Dynamic
+Method Invocation, lo cual tiene un impacto y vectores de ataque desconocidos.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://archives.neohapsis.com/archives/bugtraq/2013-09/0107.html (Patch)
+  - http://struts.apache.org/release/2.3.x/docs/s2-019.html (Patch, Vendor Advisory)
+  - http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2014-0094[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2014-03-11T13:00:37.107
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+ParametersInterceptor en Apache Struts versiones anteriores a 2.3.16.2, permite
+a atacantes remotos "manipulate" el ClassLoader por medio del parámetro class,
+que se pasa al método getClass.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.16.1)
+
+[1;33mREFERENCIAS:[0m
+  - http://jvn.jp/en/jp/JVN19294237/index.html (Third Party Advisory, VDB Entry)
+  - http://jvndb.jvn.jp/jvndb/JVNDB-2014-000045 (Third Party Advisory, VDB Entry)
+  - http://packetstormsecurity.com/files/127215/VMware-Security-Advisory-2014-0007.html (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2014-0112[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2014-04-29T10:37:03.670
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+ParametersInterceptor en Apache Struts versiones anteriores a 2.3.20, no
+restringe apropiadamente el acceso al método getClass, lo que permite a
+atacantes remotos "manipulate" el ClassLoader y ejecutar código arbitrario por
+medio de una petición diseñada. NOTA: esta vulnerabilidad se presenta debido a
+una corrección incompleta de CVE-2014-0094.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.16.2)
+
+[1;33mREFERENCIAS:[0m
+  - http://jvn.jp/en/jp/JVN19294237/index.html (Third Party Advisory, VDB Entry)
+  - http://jvndb.jvn.jp/jvndb/JVNDB-2014-000045 (Third Party Advisory, VDB Entry)
+  - http://packetstormsecurity.com/files/127215/VMware-Security-Advisory-2014-0007.html (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2014-0113[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2014-04-29T10:37:03.700
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+CookieInterceptor en Apache Struts versiones anteriores a 2.3.20, cuando un
+valor de cookiesName comodín es usado, no restringe correctamente el acceso al
+método getClass, lo que permite a atacantes remotos "manipulate" el ClassLoader
+y ejecutar código arbitrario por medio de una petición diseñada. NOTA: esta
+vulnerabilidad se presenta debido a una corrección incompleta de CVE-2014-0094.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.16.2)
+
+[1;33mREFERENCIAS:[0m
+  - http://secunia.com/advisories/59178 (Permissions Required)
+  - http://www-01.ibm.com/support/docview.wss?uid=swg21676706 (Third Party Advisory)
+  - http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2014-0116[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2014-05-08T10:55:02.967
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+CookieInterceptor en Apache Struts versiones 2.x anteriores a 2.3.20, cuando un
+valor de cookiesName comodín es usado, no restringe apropiadamente el acceso al
+método getClass, lo que permite a atacantes remotos "manipulate" el ClassLoader
+y modificar el estado de la sesión por medio de una petición diseñada. NOTA:
+esta vulnerabilidad se presenta debido a una corrección incompleta de
+CVE-2014-0113.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://secunia.com/advisories/59816 ()
+  - http://struts.apache.org/release/2.3.x/docs/s2-022.html ()
+  - http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-350733.htm ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2014-7809[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2014-12-10T15:59:01.347
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts 2.0.0 hasta 2.3.x anterior a 2.3.20 utiliza valores  previsibles,
+lo que permite a atacantes remotos evadir el mecanismo de protección CSRF.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://packetstormsecurity.com/files/129421/Apache-Struts-2.3.20-Security-Fixes.html ()
+  - http://struts.apache.org/docs/s2-023.html (Vendor Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-0785[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-04-12T16:59:00.123
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts 2.x en versiones anteriores a 2.3.28 permite a atacantes remotos
+ejecutar código arbitrario a través de una secuencia "%{}" en un atributo de
+etiqueta, también conocido como evaluación OGNL doble forzada.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.20.3)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-029.html (Vendor Advisory)
+  - http://www.securityfocus.com/bid/85066 (Third Party Advisory, VDB Entry)
+  - http://www.securitytracker.com/id/1035271 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-2162[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-04-12T16:59:01.203
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts 2.x en versiones anteriores a 2.3.25 no sanitiza el texto en el
+objeto Locale construído por I18NInterceptor, lo que podría permitir a atacantes
+remotos llevar a cabo ataques de XSS a través de vectores no especificados que
+implican la visualización de idioma.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2_beta:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-030.html (Vendor Advisory)
+  - http://www.securityfocus.com/bid/85070 ()
+  - http://www.securitytracker.com/id/1035272 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-4003[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-04-12T16:59:04.313
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Vulnerabilidad de XSS en la función URLDecoder en JRE en versiones anteriores a
+1.8, tal y como se utiliza en Apache Struts 2.x en versiones anteriores a
+2.3.28, cuando utiliza una codificación de página de un solo byte, permite a
+atacantes remotos inyectar secuencias de comandos web o HTML arbitrarios a
+través de caracteres multi-byte en un parámetro con codificación url.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-028.html (Vendor Advisory)
+  - http://www.securityfocus.com/bid/86311 (Third Party Advisory, VDB Entry)
+  - http://www.securitytracker.com/id/1035268 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-3081[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-04-26T14:59:02.207
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts versiones 2.3.19 hasta 2.3.20.2, versiones 2.3.21 hasta 2.3.24.1 y
+versiones 2.3.25 hasta 2.3.28, cuando Dynamic Method Invocation está habilitado,
+permite a atacantes remotos ejecutar código arbitrario por medio del prefijo
+method:, relacionado con expresiones encadenadas.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://packetstormsecurity.com/files/136856/Apache-Struts-2.3.28-Dynamic-Method-Invocation-Remote-Code-Execution.html (Exploit, Third Party Advisory)
+  - http://www.huawei.com/en/psirt/security-advisories/huawei-sa-20160527-01-struts2-en ()
+  - http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html (Patch, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-3082[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-04-26T14:59:03.190
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+XSLTResult en Apache Struts 2.x en versiones anteriores a 2.3.20.2, 2.3.24.x en
+versiones anteriores a 2.3.24.2 y 2.3.28.x en versiones anteriores a 2.3.28.1
+permite a atacantes remotos ejecutar código arbitrario a través del parámetro de
+hoja de cálculo location.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-031.html (Patch, Vendor Advisory)
+  - http://www.securityfocus.com/bid/88826 ()
+  - http://www.securitytracker.com/id/1035664 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-3093[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-06-07T18:59:03.683
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts 2.0.0 hasta la versión 2.3.24.1 no cachea correctamente
+referencias al método cuando se utiliza con OGNL en versiones anteriores a
+3.0.12, lo que permite a atacantes remotos provocar una denegación de servicio
+(bloqueo de acceso a sitio web) a través de vectores no especificados.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:ognl_project:ognl:*:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-034.html (Vendor Advisory)
+  - http://www-01.ibm.com/support/docview.wss?uid=swg21987854 ()
+  - http://www.securityfocus.com/bid/90961 ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-4436[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2016-10-03T15:59:01.913
+[1;34mÚltima modificación:[0m 2025-04-12T10:46:40.837
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts 2 en versiones anteriores a 2.3.29 y 2.5.x en versiones anteriores
+a 2.5.1 permiten a atacantes tener impacto no especificado a través de vectores
+relacionados con la limpieza de un nombre de acción inapropiado.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta1:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta2:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta3:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009282 (Third Party Advisory)
+  - http://www-01.ibm.com/support/docview.wss?uid=swg21987854 (Third Party Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-5638[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-03-11T02:59:00.150
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+El analizador sintáctico Jakarta Multipart en Apache Struts 2 en versiones 2.3.x
+anteriores a la 2.3.32 y versiones 2.5.x anteriores a la 2.5.10.1 no maneja
+correctamente las excepciones y la generación de mensajes de error, lo que
+permite a atacantes remotos ejecutar comandos arbitrarios a través de una cadena
+#cmd= en un encabezado HTTP de Content-Type, Content-Disposition o Content-
+Length manipulado.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.32)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.10.1)
+
+[1;33mREFERENCIAS:[0m
+  - http://blog.talosintelligence.com/2017/03/apache-0-day-exploited.html (Exploit, Third Party Advisory)
+  - http://blog.trendmicro.com/trendlabs-security-intelligence/cve-2017-5638-apache-struts-vulnerability-remote-code-execution/ (Exploit, Third Party Advisory)
+  - http://www.arubanetworks.com/assets/alert/ARUBA-PSA-2017-002.txt (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-9791[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-07-10T16:29:00.277
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+El plugin Struts 1 en Apache Struts versiones 2.1.x y 2.3.x, podría permitir la
+ejecución de código remota por medio de un valor de campo malicioso pasado en un
+mensaje sin procesar en la ActionMessage.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.29:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.30:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.31:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.32:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-048.html (Mitigation, Vendor Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html (Patch, Third Party Advisory)
+  - http://www.securityfocus.com/bid/99484 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-9787[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-07-13T15:29:00.393
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+Cuando se utiliza una funcionalidad de Programación Orientada a Aspectos (POA)
+Spring para hacer las acciones Struts seguras, es posible realizar un ataque de
+DoS. La solución es actualizar a la versión 2.5.12 o 2.3.33 de Apache Struts.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.17:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.19:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.21:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.22:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.23:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.25:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.26:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.27:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.29:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.30:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.31:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.32:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10.1:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://struts.apache.org/docs/s2-049.html (Vendor Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html ()
+  - http://www.securityfocus.com/bid/99562 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2015-5209[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-08-29T15:29:00.393
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts en versiones 2.x anteriores a la 2.3.24.1 permite que los
+atacantes remotos manipulen estados internos de Struts o alteren la
+configuración del contenedor mediante vectores que involucren un objeto de la
+cima.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.17:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.19:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.21:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.22:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.23:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.securityfocus.com/bid/82550 (Third Party Advisory, VDB Entry)
+  - http://www.securitytracker.com/id/1033908 (Third Party Advisory, VDB Entry)
+  - https://security.netapp.com/advisory/ntap-20180629-0002/ ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-9805[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-09-15T19:29:00.237
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+El Plugin REST en Apache Struts versiones 2.1.1 hasta 2.3.x anteriores a 2.3.34
+y versiones 2.5.x anteriores a 2.5.13, usa una XStreamHandler con una instancia
+de XStream para deserialización sin ningún filtrado de tipos, lo que puede
+conllevar a una ejecución de código remota cuando se deserializan cargas XML.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 8.1 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.34)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.13)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html (Patch, Third Party Advisory)
+  - http://www.securityfocus.com/bid/100609 (Broken Link, Third Party Advisory, VDB Entry)
+  - http://www.securitytracker.com/id/1039263 (Broken Link, Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-12611[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-09-20T17:29:00.400
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+En Apache Struts versiones 2.0.0 hasta 2.3.33 y versiones 2.5 hasta 2.5.10.1, el
+uso de una expresión no intencional en una etiqueta Freemarker en lugar de
+literales de cadena podría conllevar a un ataque de tipo RCE.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.17:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.19:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.21:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.22:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.23:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.25:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.26:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.27:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.29:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.30:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.31:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.32:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.33:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta1:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta2:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta3:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.arubanetworks.com/assets/alert/ARUBA-PSA-2017-003.txt (Mitigation, Third Party Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html (Patch, Third Party Advisory)
+  - http://www.securityfocus.com/bid/100829 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-9793[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-09-20T17:29:00.573
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+El Plugin REST en Apache Struts versiones 2.1.x, versiones 2.3.7 hasta 2.3.33 y
+versiones 2.5 hasta 2.5.12, está usando una biblioteca XStream obsoleta que es
+vulnerable y permite realizar un ataque de DoS usando una petición maliciosa con
+una carga útil XML especialmente diseñada.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.17:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.19:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.21:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.22:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.23:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.25:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.26:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.27:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.29:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.30:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.31:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.32:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.33:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta1:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta2:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta3:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.12:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.brocade.com/content/dam/common/documents/content-types/security-bulletin/brocade-security-advisory-2017-429.htm (Third Party Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html (Patch, Third Party Advisory)
+  - http://www.securityfocus.com/bid/100611 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2017-9804[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-09-20T17:29:00.620
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+En Apache Struts desde la versión 2.3.7 hasta la 2.3.33 y desde la 2.5 hasta la
+2.5.12, si una aplicación permite la introducción de una URL en un campo de un
+formulario y se emplea URLValidator (integrado), es posible preparar una URL
+especial que será usada para sobrecargar el proceso del servidor cuando se lleva
+a cabo la validación de la URL. NOTA: Esta vulnerabilidad existe debido a una
+solución incompleta para S2-047 / CVE-2017-7672.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.17:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.19:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.20.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.21:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.22:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.23:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.24.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.25:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.26:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.27:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.28.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.29:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.30:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.31:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.32:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.33:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta1:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta2:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5:beta3:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.10.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.5.12:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.arubanetworks.com/assets/alert/ARUBA-PSA-2017-003.txt (Third Party Advisory)
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html (Patch, Third Party Advisory)
+  - http://www.securityfocus.com/bid/100612 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2015-5169[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-09-25T21:29:00.303
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+Existe una vulnerabilidad de tipo Cross-Site Scripting (XSS) en Apache Struts en
+versiones anteriores a 2.3.20.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://jvn.jp/en/jp/JVN95989300/index.html (Third Party Advisory, VDB Entry)
+  - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000125.html (Third Party Advisory, VDB Entry)
+  - http://www.securityfocus.com/bid/76625 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-4461[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-10-16T16:29:00.607
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts en versiones 2.x anteriores a la 2.3.29 permite que atacantes
+remotos ejecuten código arbitrario mediante una secuencia "%{}" en un atributo
+de etiqueta. Esto también se conoce como evaluación OGNL doble forzada. NOTA:
+Esta vulnerabilidad existe debido a una solución incompleta para CVE-2016-0785.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.29)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.securityfocus.com/bid/91277 (Third Party Advisory, VDB Entry)
+  - https://security.netapp.com/advisory/ntap-20180629-0004/ (Third Party Advisory)
+  - https://struts.apache.org/docs/s2-036.html (Mitigation, Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2016-3090[0m
+[1;34mEstado:[0m Deferred
+[1;34mPublicado:[0m 2017-10-30T14:29:00.767
+[1;34mÚltima modificación:[0m 2025-04-20T01:37:25.860
+
+[1;33mDESCRIPCIÓN:[0m
+El método TextParseUtil.translateVariables en las versiones 2.x anteriores a la
+2.3.20 de Apache Struts permite que atacantes remotos ejecuten código arbitrario
+mediante una expresión OGNL manipulada con herramientas ANTLR.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:2.0.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.11.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.0.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.0:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.1.8.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.1.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.4.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.5:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.6:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.7:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.8:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.9:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.10:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.11:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.12:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.13:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.14.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.15.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.1:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.2:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.16.3:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.17:*:*:*:*:*:*:*
+  - cpe:2.3:a:apache:struts:2.3.19:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.securityfocus.com/bid/85131 (Third Party Advisory, VDB Entry)
+  - https://security.netapp.com/advisory/ntap-20180629-0005/ ()
+  - https://struts.apache.org/docs/s2-027.html (Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2018-1327[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2018-03-27T21:29:00.970
+[1;34mÚltima modificación:[0m 2024-11-21T03:59:38.023
+
+[1;33mDESCRIPCIÓN:[0m
+El plugin REST en Apache Struts emplea una biblioteca XStream vulnerable y que
+permite llevar a cabo un ataque de denegación de servicio (DoS) cuando utiliza
+una petición maliciosa con una carga útil XML especialmente manipulada. Se
+recomienda actualizar a la versión 2.5.16 de Apache Struts y cambiar a un
+controlador de XML Jackson opcional como se explica en el siguiente enlace:
+http://struts.apache.org/plugins/rest/#custom-contenttypehandlers. Otra opción
+es implementar un controlador de XML a medida, basado en el controlador de XML
+Jackson de la versión 2.5.16 de Apache Struts.
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html (Patch, Third Party Advisory)
+  - http://www.securityfocus.com/bid/103516 (Third Party Advisory, VDB Entry)
+  - http://www.securitytracker.com/id/1040575 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2018-11776[0m
+[1;34mEstado:[0m Analyzed
+[1;34mPublicado:[0m 2018-08-22T13:29:00.753
+[1;34mÚltima modificación:[0m 2025-03-13T21:01:25.353
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts, desde la versión 2.3 hasta la 2.3.34 y desde la versión 2.5 hasta
+la 2.5.16, sufre de una posible ejecución remota de código cuando el valor de
+alwaysSelectFullNamespace es "true" (establecido por el usuario o por un plugin
+como Convention Plugin). Además, los resultados se emplean sin ningún espacio de
+nombres y, al mismo tiempo, el paquete superior no tiene espacio de nombres o
+contiene caracteres comodín. De manera similar a como pasa con los resultados,
+existe la misma posibilidad al emplear la etiqueta url, que no tiene un valor y
+acción definidos y, además, su paquete superior no tiene espacio de nombres o
+contiene caracteres comodín.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 8.1 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.35)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.17)
+
+[1;33mREFERENCIAS:[0m
+  - http://packetstormsecurity.com/files/172830/Apache-Struts-Remote-Code-Execution.html (Third Party Advisory, VDB Entry)
+  - http://www.arubanetworks.com/assets/alert/ARUBA-PSA-2018-005.txt (Mailing List, Third Party Advisory, Broken Link)
+  - http://www.oracle.com/technetwork/security-advisory/alert-cve-2018-11776-5072787.html (Patch, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2015-2992[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2020-02-27T18:15:11.123
+[1;34mÚltima modificación:[0m 2024-11-21T02:28:27.657
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts versiones anteriores a 2.3.20, presenta una vulnerabilidad de tipo
+cross-site scripting (XSS)
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 6.1 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+  [1;36mImpacto:[0m Confidencialidad: LOW, Integridad: LOW, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.3.20)
+
+[1;33mREFERENCIAS:[0m
+  - http://jvn.jp/en/jp/JVN88408929/index.html (Third Party Advisory, VDB Entry)
+  - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000124.html (Third Party Advisory, VDB Entry)
+  - http://www.securityfocus.com/bid/76624 (Third Party Advisory, VDB Entry)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2019-0230[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2020-09-14T17:15:09.933
+[1;34mÚltima modificación:[0m 2024-11-21T04:16:32.927
+
+[1;33mDESCRIPCIÓN:[0m
+Apache Struts versiones 2.0.0 hasta 2.5.20, forzó una evaluación OGNL doble,
+cuando se evaluaba en la entrada del usuario sin procesar en los atributos de la
+etiqueta, puede conllevar a una ejecución de código remota
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://packetstormsecurity.com/files/160108/Apache-Struts-2.5.20-Double-OGNL-Evaluation.html (Exploit, Third Party Advisory, VDB Entry)
+  - http://packetstormsecurity.com/files/160721/Apache-Struts-2-Forced-Multi-OGNL-Evaluation.html (Exploit, Third Party Advisory, VDB Entry)
+  - https://cwiki.apache.org/confluence/display/ww/s2-059 (Vendor Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2019-0233[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2020-09-14T17:15:09.980
+[1;34mÚltima modificación:[0m 2024-11-21T04:16:33.400
+
+[1;33mDESCRIPCIÓN:[0m
+Una anulación del permiso de acceso en Apache Struts versiones 2.0.0 hasta
+2.5.20, puede causar una Denegación de Servicio al llevar a cabo una carga de
+archivo
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.5 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - https://cwiki.apache.org/confluence/display/ww/s2-060 (Vendor Advisory)
+  - https://launchpad.support.sap.com/#/notes/2982840 (Permissions Required, Third Party Advisory)
+  - https://www.oracle.com/security-alerts/cpuApr2021.html (Patch, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2020-17530[0m
+[1;34mEstado:[0m Analyzed
+[1;34mPublicado:[0m 2020-12-11T02:15:10.883
+[1;34mÚltima modificación:[0m 2025-04-03T16:07:29.340
+
+[1;33mDESCRIPCIÓN:[0m
+Una evaluación OGNL forzada, cuando se evalúa según la entrada del usuario sin
+procesar en los atributos de la etiqueta, puede conllevar a una ejecución de
+código remota.&#xa0;Software afectado: Apache Struts versión 2.0.0 - Struts
+versión 2.5.25
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.30)
+
+[1;33mREFERENCIAS:[0m
+  - http://jvn.jp/en/jp/JVN43969166/index.html (Third Party Advisory)
+  - http://packetstormsecurity.com/files/160721/Apache-Struts-2-Forced-Multi-OGNL-Evaluation.html (Third Party Advisory, VDB Entry)
+  - http://www.openwall.com/lists/oss-security/2022/04/12/6 (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2020-26258[0m
+[1;34mEstado:[0m Analyzed
+[1;34mPublicado:[0m 2020-12-16T01:15:12.333
+[1;34mÚltima modificación:[0m 2025-05-23T16:53:23.900
+
+[1;33mDESCRIPCIÓN:[0m
+XStream es una biblioteca de Java para serializar objetos a XML y
+viceversa.&#xa0;En XStream versiones anteriores a 1.4.15, puede ser activada una
+vulnerabilidad de tipo Server-Side Forgery Request al desagrupar.&#xa0;La
+vulnerabilidad puede permitir a un atacante remoto solicitar datos de recursos
+internos que no están disponibles públicamente solo mediante la manipulación del
+flujo de entrada procesado.&#xa0;Si confía en la lista negra predeterminada de
+XStream del Security Framework, tendrá que usar al menos la versión
+1.4.15.&#xa0;La vulnerabilidad reportada no existe si se ejecuta Java versión 15
+o superior. Ningún usuario es afectado si siguió la recomendación de configurar
+el Security Framework de XStream con una lista blanca!&#xa0;Cualquiera que
+confíe en la lista negra predeterminada de XStream puede cambiar inmediatamente
+a una lista blanca para los tipos permitidos para evitar la
+vulnerabilidad.&#xa0;Usuarios de XStream 1.4 o por debajo, quienes aún quieran
+usar la lista negra predeterminada de XStream pueden usar una solución
+alternativa que se describe con más detalle en los avisos a los que se hace
+referencia
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 6.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:N/A:N
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: NONE, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 6.0.0)
+
+[1;33mREFERENCIAS:[0m
+  - https://github.com/x-stream/xstream/security/advisories/GHSA-4cch-wxpw-8p28 (Mitigation, Third Party Advisory)
+  - https://lists.apache.org/thread.html/r97993e3d78e1f5389b7b172ba9f308440830ce5f051ee62714a0aa34@%3Ccommits.struts.apache.org%3E (Issue Tracking, Mailing List)
+  - https://lists.debian.org/debian-lts-announce/2020/12/msg00042.html (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2020-26259[0m
+[1;34mEstado:[0m Analyzed
+[1;34mPublicado:[0m 2020-12-16T01:15:12.413
+[1;34mÚltima modificación:[0m 2025-05-23T16:54:02.297
+
+[1;33mDESCRIPCIÓN:[0m
+XStream es una biblioteca de Java para serializar objetos a XML y
+viceversa.&#xa0;En XStream versiones anteriores a 1.4.15, es vulnerable a una
+Eliminación Arbitraria de Archivos en el host local al desagrupar.&#xa0;La
+vulnerabilidad puede permitir a un atacante remoto eliminar archivos conocidos
+arbitrarios en el host como registro, ya que el proceso en ejecución posee
+derechos suficientes solo mediante la manipulación del flujo de entrada
+procesado.&#xa0;Si confía en la lista negra predeterminada de XStream del
+Security Framework, tendrá que usar al menos la versión 1.4.15.&#xa0;La
+vulnerabilidad reportada no se presenta al ejecutar Java versión 15 o
+superior.&#xa0;Ningún usuario está afectado, si siguió la recomendación de
+configurar el Security Framework de XStream con una lista
+blanca!&#xa0;Cualquiera que confíe en la lista negra predeterminada de XStream
+puede cambiar inmediatamente a una lista blanca para los tipos permitidos para
+evitar la vulnerabilidad.&#xa0;Usuarios de XStream 1.4 o por debajo, quienes aún
+quieran usar la lista negra predeterminada de XStream pueden usar una solución
+alternativa que se describe con más detalle en los avisos a los que se hace
+referencia
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 6.8 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: HIGH, Disponibilidad: NONE
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 6.0.0)
+
+[1;33mREFERENCIAS:[0m
+  - https://github.com/x-stream/xstream/security/advisories/GHSA-jfvx-7wrx-43fh (Mitigation, Third Party Advisory)
+  - https://lists.apache.org/thread.html/r97993e3d78e1f5389b7b172ba9f308440830ce5f051ee62714a0aa34%40%3Ccommits.struts.apache.org%3E (Issue Tracking, Mailing List)
+  - https://lists.debian.org/debian-lts-announce/2020/12/msg00042.html (Mailing List, Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2021-31805[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2022-04-12T16:15:08.133
+[1;34mÚltima modificación:[0m 2024-11-21T06:06:15.697
+
+[1;33mDESCRIPCIÓN:[0m
+La corrección emitida para CVE-2020-17530 era incompleta. Así, desde Apache
+Struts versiones 2.0.0 hasta 2.5.29, todavía algunos de los atributos de las
+etiquetas podían llevar a cabo una doble evaluación si un desarrollador aplicaba
+la evaluación OGNL forzada usando la sintaxis %{...}. El uso de la evaluación
+forzada de OGNL en entradas de usuario no confiables puede conllevar a una
+Ejecución de Código Remota y una degradación de la seguridad
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:*
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2022/04/12/6 (Mailing List, Mitigation, Third Party Advisory)
+  - https://cwiki.apache.org/confluence/display/WW/S2-062 (Mitigation, Patch, Vendor Advisory)
+  - https://security.netapp.com/advisory/ntap-20220420-0001/ (Third Party Advisory)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-34149[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-06-14T08:15:09.450
+[1;34mÚltima modificación:[0m 2025-02-13T17:16:34.873
+
+[1;33mDESCRIPCIÓN:[0m
+Allocation of Resources Without Limits or Throttling vulnerability in Apache
+Software Foundation Apache Struts.This issue affects Apache Struts: through
+2.5.30, through 6.1.2.  Upgrade to Struts 2.5.31 or 6.1.2.1 or greater.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 4.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: LOW
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.31)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 6.1.2.1)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2023/06/14/2 (Mailing List)
+  - https://cwiki.apache.org/confluence/display/WW/S2-063 (Vendor Advisory)
+  - https://security.netapp.com/advisory/ntap-20230706-0005/ ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-34396[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-06-14T08:15:09.520
+[1;34mÚltima modificación:[0m 2025-02-13T17:16:36.117
+
+[1;33mDESCRIPCIÓN:[0m
+Allocation of Resources Without Limits or Throttling vulnerability in Apache
+Software Foundation Apache Struts.This issue affects Apache Struts: through
+2.5.30, through 6.1.2.  Upgrade to Struts 2.5.31 or 6.1.2.1 or greater
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 4.3 (MEDIUM)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: LOW
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.31)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 6.1.2.1)
+
+[1;33mREFERENCIAS:[0m
+  - http://www.openwall.com/lists/oss-security/2023/06/14/3 (Mailing List)
+  - https://cwiki.apache.org/confluence/display/WW/S2-064 (Vendor Advisory)
+  - https://security.netapp.com/advisory/ntap-20230706-0005/ ()
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-41835[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-12-05T09:15:07.093
+[1;34mÚltima modificación:[0m 2024-11-21T08:21:46.180
+
+[1;33mDESCRIPCIÓN:[0m
+Cuando se realiza una solicitud multiparte pero algunos de los campos exceden el
+límite maxStringLength, los archivos cargados permanecerán en
+struts.multipart.saveDir incluso si la solicitud ha sido denegada. Se recomienda
+a los usuarios actualizar a las versiones Struts 2.5.32 o 6.1.2.2 o Struts
+6.3.0.1 o superior, que solucionan este problema.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 7.5 (HIGH)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  [1;36mImpacto:[0m Confidencialidad: NONE, Integridad: NONE, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.32)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 6.3.0.1)
+
+[1;33mREFERENCIAS:[0m
+  - https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft (Mailing List, Release Notes)
+  - https://www.openwall.com/lists/oss-security/2023/12/09/1 (Mailing List, Third Party Advisory)
+  - https://lists.apache.org/thread/6wj530kh3ono8phr642y9sqkl67ys2ft (Mailing List, Release Notes)
+================================================================================
+
+
+================================================================================
+[1;31mCVE ID:[0m [1mCVE-2023-50164[0m
+[1;34mEstado:[0m Modified
+[1;34mPublicado:[0m 2023-12-07T09:15:07.060
+[1;34mÚltima modificación:[0m 2025-02-13T18:15:49.103
+
+[1;33mDESCRIPCIÓN:[0m
+Un atacante puede manipular los parámetros de carga de archivos para permitir
+path traversal y, en algunas circunstancias, esto puede provocar la carga de un
+archivo malicioso que puede usarse para realizar la ejecución remota de código.
+Se recomienda a los usuarios actualizar a las versiones Struts 2.5.33 o Struts
+6.3.0.1 o superior para solucionar este problema.
+
+[1;33mCVSS v3.1:[0m
+  [1;36mPuntuación:[0m 9.8 (CRITICAL)
+  [1;36mVector:[0m CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+  [1;36mImpacto:[0m Confidencialidad: HIGH, Integridad: HIGH, Disponibilidad: HIGH
+
+[1;33mSISTEMAS AFECTADOS:[0m
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 2.5.33)
+  - cpe:2.3:a:apache:struts:*:*:*:*:*:*:*:* (Versiones anteriores a 6.3.0.2)
+
+[1;33mREFERENCIAS:[0m
+  - http://packetstormsecurity.com/files/176157/Struts-S2-066-File-Upload-Remote-Code-Execution.html (Third Party Advisory, VDB Entry)
+  - https://lists.apache.org/thread/yh09b3fkf6vz5d6jdgrlvmg60lfwtqhj (Mailing List, Patch)
+  - https://security.netapp.com/advisory/ntap-20231214-0010/ (Third Party Advisory, VDB Entry)
+================================================================================
+
+type: CydxComponentType.library
+name: jackson-databind
+version: 2.9.10
+description: None
+group: None
+publisher: None
+CPE: None
+--------------------------------------
+CPE STRING: None
+Error querying NVD for None: can only concatenate str (not "NoneType") to str
+type: CydxComponentType.library
+name: spring-framework
+version: 5.2.3
+description: None
+group: None
+publisher: None
+CPE: None
+--------------------------------------
+CPE STRING: None
+Error querying NVD for None: can only concatenate str (not "NoneType") to str
+type: CydxComponentType.library
+name: tokio
+version: 1.40.0
+description: None
+group: tokio
+publisher: None
+CPE: cpe:2.3:a:tokio:tokio:1.40.0:*:*:*:*:*:*:*
+--------------------------------------
+CPE STRING: cpe:2.3:a:tokio:tokio:1.40.0:*:*:*:*:*:*:*

@@ -1,0 +1,67 @@
+{
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.6",
+    "serialNumber": "urn:uuid:4f671687-395b-41f5-a30f-a58921a69c80",
+    "version": 1,
+    "metadata": {
+        "timestamp": "2025-05-27T19:13:00Z",
+        "tools": [
+            {
+                "vendor": "OWASP",
+                "name": "CycloneDX Generator",
+                "version": "1.6.0"
+            }
+        ]
+    },
+    "components": [
+        {
+            "bom-ref": "pkg:maven/org.apache.logging.log4j/log4j@2.16.0",
+            "type": "library",
+            "group": "apache",
+            "name": "log4j",
+            "version": "2.16.0",
+            "cpe": "cpe:2.3:a:apache:log4j:2.16.0:*:*:*:*:*:*:*",
+            "purl": "pkg:maven/org.apache.logging.log4j/log4j@2.16.0"
+        },
+        {
+            "bom-ref": "pkg:openssl/openssl@1.0.2u",
+            "type": "library",
+            "group": "openssl",
+            "name": "openssl",
+            "version": "1.0.2u",
+            "cpe": "cpe:2.3:a:openssl:openssl:1.0.2u:*:*:*:*:*:*:*",
+            "purl": "pkg:openssl/openssl@1.0.2u"
+        },
+        {
+            "bom-ref": "pkg:maven/org.apache.struts/struts@2.3.15",
+            "type": "library",
+            "group": "apache",
+            "name": "struts",
+            "version": "2.3.15",
+            "purl": "pkg:maven/org.apache.struts/struts@2.3.15"
+        },
+        {
+            "bom-ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.10",
+            "type": "library",
+            "name": "jackson-databind",
+            "version": "2.9.10",
+            "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.10"
+        },
+        {
+            "bom-ref": "pkg:maven/org.springframework/spring-framework@5.2.3",
+            "type": "library",
+            "name": "spring-framework",
+            "version": "5.2.3",
+            "purl": "pkg:maven/org.springframework/spring-framework@5.2.3"
+        },
+        {
+            "bom-ref": "pkg:cargo/tokio@1.40.0",
+            "type": "library",
+            "group": "tokio",
+            "name": "tokio",
+            "version": "1.40.0",
+            "cpe": "cpe:2.3:a:tokio:tokio:1.40.0:*:*:*:*:*:*:*",
+            "purl": "pkg:cargo/tokio@1.40.0"
+        }
+    ]
+}

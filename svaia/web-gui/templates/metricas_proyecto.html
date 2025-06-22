@@ -1,0 +1,506 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: sans-serif; }
+        canvas { margin-bottom: 40px; }
+         /* Custom CSS for scrollable table */
+        .table-container {
+            height: 300px; /* Set a fixed height for the table container */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border: 1px solid #dee2e6; /* Optional: Add a border */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
+
+        /* Ensure there are lines between the rows and columns with spacing */
+        .table {
+            border-collapse: separate; /* Separate borders to use border-spacing */
+            border-spacing: 0 4px; /* Horizontal and vertical spacing between cells */
+            width: 100%;
+        }
+
+        .table-bordered {
+            border: 1px solid #dee2e6; /* Add border to the table */
+        }
+
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #dee2e6; /* Add border to cells */
+            padding: 8px; /* Add padding within cells for better spacing */
+        }
+        .card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 10px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-header {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: white;
+        }
+        .card-body-scrollable {
+            max-height: 400px; /* Fixed height for scrolling */
+            overflow-y: auto; /* Enable vertical scrollbar */
+            padding: 1rem;
+        }
+        .cve-item {
+            border-bottom: 1px solid #e9ecef; /* Divider between CVEs */
+            padding: 0.75rem 0;
+            transition: background-color 0.2s; /* Smooth hover effect */
+        }
+        .cve-item:hover {
+            background-color: #f8f9fa; /* Subtle hover background */
+        }
+        .progress {
+            height: 1.8rem;
+            font-size: 1rem;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+        .badge-level {
+            font-size: 0.9rem;
+            padding: 0.5em 1em;
+            margin: 0.2em;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .badge-selected {
+            background-color: #007bff !important;
+            color: white !important;
+            transform: scale(1.1);
+        }
+        .sbom-hash-container {
+            background-color: #f1f3f5;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            padding: 10px;
+            position: relative;
+        }
+        .sbom-hash {
+            font-family: 'Courier New', Courier, monospace;
+            word-break: break-all;
+            font-size: 0.9rem;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .alert {
+            border-radius: 8px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+  {% import '_macros.html' as macros %}
+  {{ macros.flashes() }}
+
+  <div class="container" id="proyect-info">
+    <div class="row" id="proyect-name">
+        <h1>{{ project.nombre }}</h1>
+    </div>
+
+    <div class="row my-2 " id="proyect-misc">
+
+    <!--TODO MOSTRAR AQUI LOS THRESHOLDS PARA VULNERABILIDADES ETC-->
+      {% set levels =  ['NONE', 'LOW', 'MEDIUM', 'HIGH', 'CRITICAL'] %}
+      <div class="col" id="proyect-thresholds">
+                  <div class="card h-100">
+                      <div class="card-header bg-primary text-white">
+                          <h5 class="card-title mb-0">Requerimientos</h5>
+                      </div>
+                      <div class="card-body">
+                          <p class="card-text"><strong>Owner:</strong> {{ project.owner }}</p>
+                          <p class="card-text"><strong>Description:</strong> {{ project.descripcion or 'None' }}</p>
+                          <p class="card-text"><strong>Created:</strong> {{ project.fecha_creacion or 'None' }}</p>
+                          <p class="card-text"><strong>Edited:</strong> {{ project.fecha_edicion or 'None' }}</p>
+                          {% if sec_info %}
+                              <h6 class="mt-3">Security Information</h6>
+                              <div class="mb-2">
+                                  <label class="form-label"><strong>Max CVSS Level:</strong> {{ sec_info.nivelCVSS or 'None' }}</label>
+                                  <div class="progress" title="CVSS Score (0-10)">
+                                      <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: {{ (sec_info.nivelCVSS or 0) * 10 }}%" aria-valuenow="{{ sec_info.nivelCVSS or 0 }}" aria-valuemin="0" aria-valuemax="10">
+                                          {{ sec_info.nivelCVSS or 0 }}/10
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- Integrity Level -->
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>MAX Integrity Level:</strong></label>
+                                  <div>
+                                      {% for level in levels %}
+                                          <span class="badge badge-level {{ 'badge-selected' if sec_info.nivelIntegridad == level else 'bg-light text-dark' }}" title="Integrity: {{ level }}">{{ level }}</span>
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <!-- Confidentiality Level -->
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>MAX Confidentiality Level:</strong></label>
+                                  <div>
+                                      {% for level in levels %}
+                                          <span class="badge badge-level {{ 'badge-selected' if sec_info.nivelConfidencialidad == level else 'bg-light text-dark' }}" title="Confidentiality: {{ level }}">{{ level }}</span>
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <!-- Availability Level -->
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>MAX Availability Level:</strong></label>
+                                  <div>
+                                      {% for level in levels %}
+                                          <span class="badge badge-level {{ 'badge-selected' if sec_info.nivelDisponibilidad  == level else 'bg-light text-dark' }}" title="Availability: {{ level }}">{{ level }}</span>
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <!-- SBOM Hash -->
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>SBOM Hash:</strong></label>
+                                  <div class="sbom-hash-container">
+                                      <span class="sbom-hash">{{ sec_info.sbomHash or 'None' }}</span>
+                                      {% if sec_info.sbomHash %}
+                                          <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="navigator.clipboard.writeText('{{ project.sec_info.sbomHash }}'); alert('SBOM Hash copied to clipboard!')">Copy</button>
+                                      {% endif %}
+                                  </div>
+                              </div>
+                          {% else %}
+                              <p class="card-text text-muted">No SecInfo set.</p>
+                          {% endif %}
+                      </div>
+                      <div class="card-footer text-center">
+                          <a href= "{{ url_for('editar_proyecto',nombre_proyecto = project.nombre) }}" class="btn btn-sm btn-outline-primary">Edit Project</a>
+                      </div>
+                  </div>
+      </div>
+
+    <!--TODO MOSTRAR AQUI LOS ULTIMOS CAMBIOS (EN THRESHOLDS,SBOMS,ETC)-->
+      <div class="col" id="proyect-last-actions">
+        <div class="card h-100">
+          <div class="card-header bg-primary text-white">
+              <h5 class="card-title mb-0">ChangeLog</h5>
+          </div>
+          <div class="card-body">
+          TODO: Incluir los últimos cambios de edición de parámetros del proyecto aquí (en thresholds, sbom...)
+          </div>
+          <div class="card-footer">
+          Footer
+          </div>
+        </div>
+      </div>
+
+<!--RESULTADOS-->      
+   <div class="row my-2" id="proyect-results">
+      <div class="col" id="proyect-thresholds">
+                  <div class="card h-100">
+                      <div class="card-header bg-primary text-white">
+                          <h5 class="card-title mb-0">Resultados Análisis</h5>
+                      </div>
+                      <div class="card-body">
+                              <!--CVSS-->
+                              <div class="mb-2">
+                                  <strong>CVSS Level:</strong>
+                                  <div class="progress" title="CVSS Score (0-10)">
+                                    {% if analysis_result.actualNivelCVSS <= sec_info.nivelCVSS %}                                
+                                      <div class="progress-bar progress-bar-striped  bg-success" role="progressbar" style="width: {{ (analysis_result.actualNivelCVSS) * 10 }}%" aria-valuenow="{{ analysis_result.actualNivelCVSS or 0 }}" aria-valuemin="0" aria-valuemax="10">
+                                          {{ analysis_result.actualNivelCVSS }}/10
+                                      </div>
+                                    {% else %}
+                                      <div class="progress-bar progress-bar-striped  bg-danger" role="progressbar" style="width: {{ (analysis_result.actualNivelCVSS) * 10 }}%" aria-valuenow="{{ analysis_result.actualNivelCVSS or 0 }}" aria-valuemin="0" aria-valuemax="10">
+                                          {{ analysis_result.actualNivelCVSS }}/10
+                                      </div>                                    
+                                    {% endif %}      
+                                  </div>
+                              </div>
+                              
+                              <!-- Integrity Level -->
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>Integrity Level:</strong></label>
+                                  <div>
+                                      {% set index1 = levels.index(sec_info.nivelIntegridad) %}
+                                      {% set index2 = levels.index(analysis_result.actualNivelIntegridad) %}
+                                      {% if index1 < index2 %}
+                                        <span class="badge bg-danger">{{analysis_result.actualNivelIntegridad}}</span>
+                                      {% else %}
+                                        <span class="badge bg-success">{{analysis_result.actualNivelIntegridad}}</span>
+                                      {% endif %}
+                                  </div>
+                              </div>
+
+                              <!-- Confidentiality -->  
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>Confidentiality Level:</strong></label>
+                                  <div>
+                                      {% set index1 = levels.index(sec_info.nivelConfidencialidad) %}
+                                      {% set index2 = levels.index(analysis_result.actualNivelConfidencialidad) %}
+                                      {% if index1 < index2 %}
+                                        <span class="badge bg-danger">{{analysis_result.actualNivelConfidencialidad}}</span>
+                                      {% else %}
+                                        <span class="badge bg-success">{{analysis_result.actualNivelConfidencialidad}}</span>
+                                      {% endif %}
+                                  </div>
+                              </div>
+
+                              <!-- Availability -->
+                              <div class="mb-3">
+                                  <label class="form-label"><strong>Availability Level:</strong></label>
+                                  <div>
+                                      {% set index1 = levels.index(sec_info.nivelDisponibilidad) %}
+                                      {% set index2 = levels.index(analysis_result.actualNivelDisponibilidad) %}
+                                      {% if index1 < index2 %}
+                                        <span class="badge bg-danger">{{analysis_result.actualNivelDisponibilidad}}</span>
+                                      {% else %}
+                                        <span class="badge bg-success">{{analysis_result.actualNivelDisponibilidad}}</span>
+                                      {% endif %}
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+      </div>
+
+    <!--CVES-->
+      <div class="col" id="CVES">
+        <div class="card h-100">
+          <div class="card-header bg-primary text-white">
+              <h5 class="card-title mb-0">CVES</h5>
+          </div>
+          <div class="card-body card-body-scrollable">
+            {% for cve in cves %}
+                <div class="cve-item">
+                    <h5> <a href="{{cve.url}}">{{cve.cve_id}}</a> 
+                        <span class="float-end"><a href= "{{ url_for('ver_cve',cve_id=cve.cve_id ) }}" class="btn btn-sm btn-outline-primary">View Details</a></span>                    
+                    </h5>
+                    <h6 class="mb-1">
+                        <strong> CVSS: {{cve.cvss}} </strong> 
+                        {% set index1 = levels.index(sec_info.nivelIntegridad) %}
+                        {% set index2 = levels.index(cve.integridad) %}
+                        <strong>Integridad: </strong>
+                        {% if index1 < index2 %}
+                          <span class="badge bg-danger">{{cve.integridad}}</span>
+                        {% else %}
+                          <span class="badge bg-success">{{cve.integridad}}</span>
+                        {% endif %}
+                        <strong>Confidencialidad: </strong>
+                        {% set index1 = levels.index(sec_info.nivelConfidencialidad) %}
+                        {% set index2 = levels.index(cve.confidencialidad) %}
+                        {% if index1 < index2 %}
+                          <span class="badge bg-danger">{{cve.confidencialidad}}</span>
+                        {% else %}
+                          <span class="badge bg-success">{{cve.confidencialidad}}</span>
+                        {% endif %}
+                        <strong>Disponibilidad: </strong>
+                        {% set index1 = levels.index(sec_info.nivelDisponibilidad) %}
+                        {% set index2 = levels.index(cve.disponibilidad) %}
+                        {% if index1 < index2 %}
+                          <span class="badge bg-danger">{{cve.disponibilidad}}</span>
+                        {% else %}
+                          <span class="badge bg-success">{{cve.disponibilidad}}</span>
+                        {% endif %}
+
+                    </h6>
+                </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+  <div class = row id="monitoring-title">
+    <h1>ENDPOINTS MONITORIZADOS</h1>
+  </div>
+  <div class="container" id="charts-container">
+  </div>
+
+
+
+<!-- SCRIPTS PART-->
+  <script>
+    // Initialize WebSocket connection
+    // TODO REMOVE HARDCODED API
+    const socket = new WebSocket(`ws://localhost:4445/ws/get_data`);
+    // TODO REMOVE HARDCODED TOKEN
+    const project_token = 'token1'//"{{ token }}";
+    console.log(socket,project_token)
+    const charts = {};
+
+    const createChart = (host) => {
+      const container = document.getElementById("charts-container");
+
+      // Create row per project
+      const row = document.createElement("div");
+      const title = document.createElement("h5");
+      row.classList.add("row")
+      title.textContent = `Host: ${host}`;
+
+      // Column for graphs
+      const graph_col = document.createElement("div")
+      graph_col.classList.add("col-8")
+
+      const canvas = document.createElement("canvas");
+      canvas.id = `chart-${host}`;
+
+      graph_col.appendChild(canvas);
+
+      // Column for notifications
+      const notifications_col = document.createElement("div");
+      const notifications_table_div = document.createElement("table");
+      const notifications_table_head = document.createElement("thead");      
+      const notifications_table_body = document.createElement("tbody");
+
+      // Create a table
+      // Container
+      notifications_col.classList.add("col-4");
+      notifications_col.classList.add("table-container");
+
+      // <Table>
+      notifications_table_div.classList.add("table-stripped");
+      notifications_table_div.classList.add("table-bordered");
+
+      // <Tbody>
+      notifications_table_body.classList.add("table");
+      notifications_table_body.id = `tableBody_${host}`;
+
+      // <thead>
+      notifications_table_body.classList.add("card-body");
+      notifications_table_body.classList.add("scrollable-text");
+      ['Timestamp','Kind', 'Mode', 'Path'].forEach(headerText => {
+          const th = document.createElement('th');
+          th.scope = 'col';
+          th.textContent = headerText;
+          notifications_table_head.appendChild(th);
+      });
+
+
+      notifications_table_div.appendChild(notifications_table_head)
+      notifications_table_div.appendChild(notifications_table_body)
+      notifications_col.appendChild(notifications_table_div);
+
+      row.appendChild(graph_col);
+      row.appendChild(notifications_col);
+      row.appendChild(title);
+      container.appendChild(row);
+
+
+      const ctx = canvas.getContext("2d");
+
+      const chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: [],
+              datasets: [
+                  {
+                      label: 'CPU %',
+                      borderColor: 'red',
+                      data: [],
+                      tension: 0.3,
+                      borderWidth: 0.8,
+                  },
+                  {
+                      label: 'Memory %',
+                      borderColor: 'blue',
+                      data: [],
+                      tension: 0.3,
+                      borderWidth: 0.8,
+                  },
+                  {
+                    label: 'Load avg 5min',
+                    borderColor: 'green',
+                    data: [],
+                    tension: 0.3,
+                    borderWidth: 0.8,
+                  }
+              ]
+          },
+          options: {
+              responsive: true,
+              animation: false,
+              scales: {
+                  y: {
+                      min: 0,
+                      max: 100
+                  }
+              }
+          }
+      });
+
+      charts[host] = chart;
+    };
+
+    const updateChart = (host, timestamp, cpu, memory,load_avg) => {
+      const chart = charts[host];
+
+      chart.data.labels.push(timestamp.slice(0,20));
+      chart.data.datasets[0].data.push(cpu);
+      chart.data.datasets[1].data.push(memory);
+      chart.data.datasets[2].data.push(load_avg);
+      // Limit to 20 data points
+      const maxDataPoints = 20;
+      if (chart.data.labels.length > maxDataPoints) {
+        chart.data.labels.shift();
+        chart.data.datasets[0].data.shift();
+        chart.data.datasets[1].data.shift();
+        chart.data.datasets[2].data.shift();
+      }
+
+      chart.update();
+    };
+
+    const insertNotification = (tbody,timestamp,data) => {
+      const row = document.createElement('tr');
+      [timestamp.slice(0,20),data.kind,data.mode,data.paths].forEach(cellData => {
+                    const td = document.createElement('td');
+                    td.textContent = cellData;
+                    row.appendChild(td);
+                });
+
+       tbody.appendChild(row);
+    }
+
+
+    socket.onopen = () => {
+      socket.send(project_token);
+    };
+
+    socket.onerror = (error) => {
+      console.error("WebSocket error:", error);
+      console.log("Connection state:", socket.readyState);
+      const container = document.getElementById("charts-container");
+      container.innerHTML= `<h1>Failed to connect to the WebSocket. Please check the server status.</h1>`;
+    };
+
+    socket.onmessage = (event) => {
+        const log_data = JSON.parse(event.data);
+        console.log("Received data:", log_data);
+
+        if (!(log_data.host in charts)) {
+          createChart(log_data.host);
+        }
+
+        // const updateChart = (host, timestamp, cpu, memory,load_avg)
+        // TODO Make checks of correctness here :) 
+        if (log_data.message_type === 'SystemMetric') { 
+          updateChart(log_data.host,log_data.timestamp,log_data.data.cpu_usage,(log_data.data.used_memory * 100) / log_data.data.total_memory,log_data.data.load_avg[1]);
+        }
+        else if (log_data.message_type === 'FileLog') {
+          const tbody = document.getElementById(`tableBody_${log_data.host}`);
+          insertNotification(tbody,log_data.timestamp,log_data.data);
+        };
+    };
+
+    socket.onclose = (event) => {
+      if (event.code === 1008) {
+        alert("WebSocket closed due to invalid token (code 1008).");
+      } else {
+        console.log(`WebSocket closed with code ${event.code}`);
+      }
+    };
+
+  </script>
+{% endblock %}

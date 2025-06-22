@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+{% block head %}
+{{super()}}
+<style>
+  .container-custom {
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 0;
+  }
+
+  .image-container img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .text-container {
+      max-width: 450px;
+  }
+  .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+  }
+  .step-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: #d6d8db;
+      color: #333;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+</style>
+{% endblock %}
+{% block content %}
+        <!--Fondo gris superior-->
+        <div class="p-3" style="clip-path: ellipse(130% 130% at 50%  -30%);background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(36, 42, 61, 0.5));">
+            {% import '_macros.html' as macros %}
+            {{ macros.flashes() }}
+            <div class="d-flex justify-content-center align-items-center flex-column" style="margin: 80px 0px 40px 0px;"><!--SVAIA-->
+                <img src="{{url_for('static',filename='/imgs/SVAIA.png')}}" style="width: 20%; height: 20%;">
+                <p class="text-center text-primary">Sistema de soporte para Vulnerabilidades y Amenazas basado en Inteligencia Artificial</p>
+            </div>
+
+            <div class="row justify-content-center"><!--Dos bloques grises-->
+                <div class=" col card text-white bg-secondary mb-3 mx-2" style="max-width: 20rem;">
+                    <div class="card-body">
+                    <h4 class="card-title">¡Comienza ya !</h4>
+                    <p class="card-text">Describe tu proyecto y comienza a recibir sugerencias sobre seguridad por parte de nuestra Inletigencia Artificial</p>
+                    </div>
+                </div>
+                <div class=" col card text-white bg-secondary mb-3 mx-2" style="max-width: 20rem;">
+                    <div class="card-body">
+                    <h4 class="card-title">Vulnerabilidades</h4>
+                    <p class="card-text">Nuestro modelo se basa en miles de vulnerabilidades conocidas y en la información más reciente de la industria.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 50px; ">
+            </div>
+        </div>
+
+        <!--Fondo blanco central-->
+        <div class="row">
+            <div class="container-custom d-flex flex-column flex-lg-row gap-50">
+            <!-- Imagen del chat -->
+            <div class="image-container">
+                <img src="{{url_for('static',filename='/imgs/SVAIA - Chat.png')}}">
+            </div>
+
+            <!-- Texto numerado -->
+            <div class="text-container">
+                <div class="step d-flex flex-column flex-lg-row align-items-lg-start gap-3 align-items-center">
+                    <div class="step-number bg-secondary text-light ">1</div>
+                    <div>
+                        <h5>Describe tu proyecto</h5>
+                        <p>Describe tu proyecto usando nuestro chat.</p>
+                    </div>
+                </div>
+                <div class="step d-flex flex-column flex-lg-row align-items-lg-start gap-3 align-items-center">
+                    <div class="step-number bg-secondary text-light">2</div>
+                    <div>
+                        <h5>Recibe sugerencias</h5>
+                        <p>Nuestra IA buscará vulnerabilidades que puedan ser de tu interés.</p>
+                    </div>
+                </div>
+                <div class="step d-flex flex-column flex-lg-row align-items-lg-start gap-3 align-items-center">
+                    <div class="step-number bg-secondary text-light ">3</div>
+                    <div>
+                        <h5>Más detalles</h5>
+                        <p>Sigue hablando con la IA para obtener más información.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <!--Fondo gris inferior-->
+        <div class="p-3" style=" clip-path: ellipse(100% 100% at 50% 100%);background-color:rgba(36, 42, 61, 0.5);">
+            <div style="height: 50px; "></div>
+            <div class="text-center">
+              <h1>Tabla de precios</h1>
+              <p>Elige la modalidad que mejor se adapte a tus necesidades</p>
+            </div>
+            <div class="row justify-content-center flex-column flex-lg-row alig-content-lg-start align-content-center">
+                <div class="col-lg-auto col-5"><!--1-->
+                <div class="card border-primary mb-3 mx-2 w-100 custom-lg-width">
+                    <div class="card-header bg-primary" style="color: white; ">Básico</div>
+                    <div class="card-body">
+                        <h2 class="card-title fw-bold">0<span class="fs-4" style="color:rgb(183, 180, 180)">/€mes</span></h4>
+                        <p class="card-text">
+                            1 proyecto <br>
+                            10 sugerencias <br>
+                            Sin soporte
+                        </p>
+                        <button type="button" class="btn btn-outline-primary" style="width:100%">Comenzar</button>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-auto"><!--2-->
+                <div class=" card border-primary mb-3 mx-2 w-100 custom-lg-width">
+                <div class=" card-header bg-primary" style="color: white;">Profesional</div>
+                    <div class="card-body">
+                        <h2 class="fw-bold">19,99<span class="fs-4" style="color:rgb(183, 180, 180)">/€mes</span></h4>
+                        <p class="card-text">
+                            10 proyectos <br>
+                            100 sugerencias <br>
+                            Soporte por chat <br>
+                            Acceso a la API <br>
+                        </p>
+                        <button type="button" class="btn btn-outline-primary" style="width:100%">Comenzar</button>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-auto"><!--3-->
+                <div class=" card border-primary mb-3 mx-2 w-100 custom-lg-width">
+                <div class="card-header bg-primary" style="color: white;">Empresarial</div>
+                    <div class="card-body">
+                        <h2 class="fw-bold">49,99<span class="fs-4" style="color:rgb(183, 180, 180)">€/mes</span></h2>
+                        <p class="card-text">
+                            100 proyectos<br>
+                            Sugerencias ilimitadas <br>
+                            Soporte por chat <br>
+                            Soporte por teléfono <br>
+                            Acceso a la API <br>
+                        </p>
+                        <button type="button" class="btn btn-outline-primary" style="width:100% ">Comenzar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

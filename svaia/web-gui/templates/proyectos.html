@@ -1,0 +1,133 @@
+{% extends "layout.html"%}
+{% block head %}
+  {{ super() }}
+    <script src="{{ url_for('static',filename='/js/index.js') }}"></script>
+  <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 2rem); /* Restamos el padding del footer */
+        padding: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow-y: auto;
+    }
+
+    .project-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .project-item {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Resto de estilos de proyectos se mantienen igual */
+    .project-header {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .project-description {
+        margin-bottom: 1rem;
+        color: #495057;
+    }
+
+    .project-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .action-link {
+        color: var(--bs-success);
+        text-decoration: none;
+        transition: color 0.2s;
+        font-weight: 500;
+    }
+
+    .action-link:hover {
+        color: #13653f;
+        text-decoration: underline;
+    }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+{% import '_macros.html' as macros%}
+{{ macros.flashes() }}
+
+<div class="container">
+    <ul class="project-list">
+    {% for p in proyectos %}
+        <li class="project-item">
+            <div class="project-header">
+                <strong>Nombre:</strong> {{ p.nombre }}
+            </div>
+             <div class="project-header">
+                <strong>Owner:</strong> {{ p.owner }}
+            </div>
+            <div class="project-header">
+                <strong>Descripcion:</strong> {{ p.descripcion }}
+            </div>
+            <div class="project-header">
+                <strong>Fecha creación:</strong> {{ p.fecha_creacion[:16] }}
+            </div>
+            <div class="project-header">
+                <strong>Fecha última edición:</strong> {{ p.fecha_edicion[:16] }}
+            </div>
+            <div class="project-actions">
+                <button class="btn btn-danger btn-sm" onclick="eliminarProyecto('{{ p.nombre }}')">Eliminar</button>
+
+                <form method="GET" action="{{ url_for('editar_proyecto',nombre_proyecto = p.nombre) }}">
+                  
+                    <input type="hidden" name="nombre" value="{{ p.nombre }}">
+                    <button type="submit" class="btn btn-primary btn-sm">Editar</button>
+                </form>
+
+                <form method="GET" action="{{ url_for('ver_proyecto',nombre_proyecto = p.nombre) }}">
+                  
+                    <input type="hidden" name="nombre" value="{{ p.nombre }}">
+                    <button type="submit" class="btn btn-primary btn-sm">Ver Proyecto</button>
+                </form>
+
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<script>
+    function eliminarProyecto(nombre) {
+      if (!confirm(`¿Estás seguro de que quieres eliminar el proyecto "${nombre}"?`)) return;
+    
+      fetch(`http://127.0.0.1:4447/api/proyectos/eliminar/${encodeURIComponent(nombre)}`, {
+        method: "DELETE"
+      })
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(errorData => {
+            throw new Error(errorData.error || "Error al eliminar el proyecto");
+          });
+        }
+        return response.json();
+      })
+    .then(data => {
+      window.location.href = "{{ url_for('proyectos') }}";  // Redirige a la lista de proyectos
+    })
+      .catch(error => {
+        alert("Error: " + error.message);
+      });
+    }
+    </script>
+    
+
+
+
+
+{% endblock %}

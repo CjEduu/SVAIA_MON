@@ -1,0 +1,53 @@
+Run started:2025-06-04 14:26:13.808005
+Files in scope (2):
+	./app.py (score: {SEVERITY: 10, CONFIDENCE: 8})
+	./app_backend.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+Files excluded (5):
+	./SAST/04-06-25-bandit.txt
+	./SAST/04-06-25-semgrep.txt
+	./__pycache__/app.cpython-312.pyc
+	./__pycache__/app.cpython-313.pyc
+	./config.toml
+
+Test results:
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b108_hardcoded_tmp_directory.html
+   Location: ./app.py:49:33
+48	    "mariadb+mariadbconnector://cj:cj@localhost/practicaDB",
+49	    connect_args={"unix_socket": "/tmp/mariadb.sock"},
+50	    echo=True
+
+--------------------------------------------------
+>> Issue: [B113:request_without_timeout] Call to requests without timeout
+   Severity: Medium   Confidence: Low
+   CWE: CWE-400 (https://cwe.mitre.org/data/definitions/400.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html
+   Location: ./app.py:332:20
+331	    print("ENDPOINT: ",SBOM_API_ENDPOINT)
+332	    sbom_analysis = requests.post(
+333	        SBOM_API_ENDPOINT,
+334	        data={"nCV":nivelCVSS, "nIN":nivelIntegridad,"nCO":nivelConfidencialidad,"nDI":nivelDisponibilidad,"sbom":sbom},
+335	    )
+336	    
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 586
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 2
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 1
+		Medium: 1
+		High: 0
+Files skipped (0):
